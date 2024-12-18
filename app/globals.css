@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
+  @apply scroll-smooth m-0 p-0;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-[#002663];
+}
+::-webkit-scrollbar {
+  @apply w-[4px] h-[4px];
+}
+.scroll-none::-webkit-scrollbar {
+  display: none;
+}
+
+.theme {
+  transition: 5s all ease;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -90,24 +110,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth !important;
-  @apply scroll-smooth m-0 p-0;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-zinc-500;
-}
-::-webkit-scrollbar {
-  @apply w-[2px] h-[2px];
-}
-.scroll-none::-webkit-scrollbar {
-  display: none;
-}
-
-.theme {
-  transition: 5s all ease;
 }

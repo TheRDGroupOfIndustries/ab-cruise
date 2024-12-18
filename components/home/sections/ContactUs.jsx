@@ -113,45 +113,47 @@ const ContactUs = () => {
               className="space-y-8"
               variants={staggerContainer(0.2, 0.1)}
             >
-              {/* Phone */}
-              <motion.div
-                className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
-                variants={fadeIn("up", 0.9)}
-              >
-                <FaPhone className="text-[#002663] text-4xl mx-auto" />
-                <p className="text-gray-800 mt-4">Call us:</p>
-                <Link
-                  href="tel:+919086345XX2"
-                  className="hover:text-[#002663] transition-colors block mt-1"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Phone */}
+                <motion.div
+                  className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
+                  variants={fadeIn("up", 0.9)}
                 >
-                  <span className="hover-link">+91 9086345XX2</span>
-                </Link>
-              </motion.div>
+                  <FaPhone className="text-[#002663] text-4xl mx-auto" />
+                  <p className="text-gray-800 mt-4">Call us:</p>
+                  <Link
+                    href="tel:+919086345XX2"
+                    className="hover:text-[#002663] transition-colors block mt-1"
+                  >
+                    <span className="hover-link">+91 9086345XX2</span>
+                  </Link>
+                </motion.div>
 
-              {/* Email */}
-              <motion.div
-                className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
-                variants={fadeIn("up", 1)}
-              >
-                <FaEnvelope className="text-[#002663] text-4xl mx-auto" />
-                <p className="text-gray-800 mt-4">Email us:</p>
-                <Link
-                  href="mailto:support@abcruise.com"
-                  className="hover:text-[#002663] transition-colors block mt-1"
+                {/* Email */}
+                <motion.div
+                  className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
+                  variants={fadeIn("up", 1)}
                 >
-                  <span className="hover-link">support@abcruise.com</span>
-                </Link>
-              </motion.div>
+                  <FaEnvelope className="text-[#002663] text-4xl mx-auto" />
+                  <p className="text-gray-800 mt-4">Email us:</p>
+                  <Link
+                    href="mailto:support@abcruise.com"
+                    className="hover:text-[#002663] transition-colors block mt-1"
+                  >
+                    <span className="hover-link">support@abcruise.com</span>
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
 
             {/* Map */}
             <motion.div
-              className="w-full relative bg-white/80 backdrop-blur-md rounded-3xl"
               variants={fadeIn("up", 1.1)}
+              className="w-full relative bg-white/80 backdrop-blur-md rounded-3xl mt-6"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.5258990248707!2d83.01160731501636!3d25.308068983850377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2e21ee6d5ca1%3A0x5f6ac1b6e7e4761e!2sGanga%20Ghat%2C%20Varanasi!5e0!3m2!1sen!2sin!4v1647850821016!5m2!1sen!2sin"
-                className="w-full h-60 rounded-lg"
+                className="w-full h-60 rounded-2xl"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Location Map"
