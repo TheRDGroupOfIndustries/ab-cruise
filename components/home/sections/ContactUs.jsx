@@ -16,7 +16,7 @@ const ContactUs = () => {
   return (
     <motion.section
       id="contact-us"
-      className="select-none p-6"
+      className="select-none p-4 md:p-8"
       variants={staggerContainer(0.2, 0.1)}
       initial="hidden"
       whileInView="show"
@@ -30,7 +30,7 @@ const ContactUs = () => {
       </motion.h2>
 
       <motion.div
-        className="bg-[#002663] rounded-3xl p-8"
+        className="bg-[#002663] rounded-3xl p-4 md:p-8"
         variants={fadeIn("up", 0.3)}
       >
         <motion.h2

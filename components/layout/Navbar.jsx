@@ -6,6 +6,13 @@ import Image from "next/image";
 import { fadeIn, staggerContainer } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { links } from "@/constant/data";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -35,11 +42,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="select-none fixed top-0 left-0 right-0 z-50 w-full h-16 overflow-hidden">
+    <nav className="select-none fixed top-0 left-0 right-0 z-50 w-full h-16 lg:h-20 overflow-hidden">
       {/* Background SVG */}
-      <div className="absolute inset-0 w-full h-4 bg-white rounded-b-full"></div>
-      <div className="absolute top-[0.967rem] left-0 w-full flex-center">
-        <div className="w-[1920px] h-[50px] relative z-50">
+      <div className="hidden lg:block absolute inset-0 w-full h-4 bg-white rounded-b-full"></div>
+      <div className="absolute top-[0.967rem] left-0 w-full flex justify-center">
+        <div className="hidden lg:block w-[1920px] max-w-full h-[50px] relative z-50">
           <Image
             src="/assets/TOP_CURVE.svg"
             alt="background curve"
@@ -49,9 +56,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="absolute top-0 left-0 w-full z-[51]">
+      <div className="absolute top-4 left-0 w-full z-[51] flex items-center justify-between px-4 lg:px-8">
+        {/* Desktop Menu */}
         <motion.div
-          className="max-w-7xl flex-center gap-6 mx-auto p-4"
+          className="hidden lg:flex max-w-7xl justify-center gap-6 mx-auto"
           variants={staggerContainer(0.2, 0.1)}
           initial="hidden"
           animate="show"
@@ -66,12 +74,12 @@ const Navbar = () => {
               <motion.div key={index} variants={fadeIn("up", index * 0.1)}>
                 <Link
                   href={link.href}
-                  className={`text-xl capitalize ${
+                  className={`text-sm lg:text-xl capitalize ${
                     link.label !== "ab"
                       ? isActive
                         ? "text-[#0060FA] underline underline-offset-8"
                         : "hover-link-underline text-gray-800 hover:text-[#0060FA]"
-                      : "rounded-full bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-2xl font-['El_Messiri'] font-semibold p-2"
+                      : "rounded-full bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg lg:text-2xl font-['El_Messiri'] font-semibold p-2 lg:p-3"
                   } ease-in-out duration-300`}
                 >
                   {link.label}
@@ -80,6 +88,46 @@ const Navbar = () => {
             );
           })}
         </motion.div>
+
+        {/* Mobile Menu Trigger */}
+        <Sheet className="br">
+          <SheetTrigger asChild>
+            <button className="lg:hidden p-2 bg-white rounded-md">
+              <Menu className="w-6 h-6 text-gray-800" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="left" className="p-6 bg-white">
+            <div className="w-14 h-14 flex-center rounded-full mb-4 bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg font-['El_Messiri'] font-semibold px-4 py-2">
+              <Link href="/">
+                <SheetClose>AB</SheetClose>
+              </Link>
+            </div>
+            <div className="flex flex-col space-y-6">
+              {links.map((link, index) => {
+                const isActive =
+                  activeSection === "hero"
+                    ? link.href === "/"
+                    : link.href === "/#" + activeSection;
+
+                return (
+                  link.label !== "ab" && (
+                    <Link key={index} href={link.href} className="w-fit">
+                      <SheetClose
+                        className={`text-2xl capitalize ${
+                          isActive
+                            ? "text-[#0060FA] underline underline-offset-8"
+                            : "hover:text-[#0060FA] text-gray-800"
+                        } ease-in-out duration-300`}
+                      >
+                        {link.label}
+                      </SheetClose>
+                    </Link>
+                  )
+                );
+              })}
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );

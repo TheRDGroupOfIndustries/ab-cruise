@@ -32,7 +32,9 @@ const Footer = () => {
             {/* Logo and Description Section */}
             <motion.div variants={fadeIn("left", 0.3)}>
               <h2 className="text-2xl md:text-4xl 2xl:text-5xl font-bold mb-4">
-                Ab Cruise
+                <Link href="/" className="w-fit hover-link">
+                  Ab Cruise
+                </Link>
               </h2>
               <p className="text-sm italic mb-4">
                 Lorem ipsum dolor sit amet consectetur. Fringilla in mattis eget
