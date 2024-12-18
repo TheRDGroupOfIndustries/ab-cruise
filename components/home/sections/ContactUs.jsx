@@ -122,10 +122,10 @@ const ContactUs = () => {
                   <FaPhone className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Call us:</p>
                   <Link
-                    href="tel:+919086345XX2"
+                    href="tel:+919873214524"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
-                    <span className="hover-link">+91 9086345XX2</span>
+                    <span className="hover-link">+91 9873214524</span>
                   </Link>
                 </motion.div>
 
