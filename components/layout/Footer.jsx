@@ -131,7 +131,7 @@ const Footer = () => {
             className="text-center mt-6 pt-6 border-t border-gray-600"
             variants={fadeIn("up", 0.8)}
           >
-            <Link href="/">
+            <Link href="/" className="w-fit hover-link">
               &copy; {new Date().getFullYear()} All copyrights are reserved by
               AB Cruise
             </Link>

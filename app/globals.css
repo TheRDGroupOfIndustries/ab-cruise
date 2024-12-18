@@ -12,7 +12,7 @@
   @apply rounded-full bg-[#002663];
 }
 ::-webkit-scrollbar {
-  @apply w-[4px] h-[4px];
+  @apply w-[6px] h-[6px] cursor-grab active:cursor-grabbing;
 }
 .scroll-none::-webkit-scrollbar {
   display: none;
