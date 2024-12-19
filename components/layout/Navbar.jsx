@@ -75,11 +75,11 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   className={`text-sm lg:text-xl capitalize ${
-                    link.label !== "ab"
+                    link.label !== "AB"
                       ? isActive
                         ? "text-[#0060FA] underline underline-offset-8"
                         : "hover-link-underline text-gray-800 hover:text-[#0060FA]"
-                      : "rounded-full bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg lg:text-2xl font-['El_Messiri'] font-semibold p-2 lg:p-3"
+                      : "rounded-full bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg lg:text-2xl font-elMessiri font-semibold px-2 py-1.5"
                   } ease-in-out duration-300`}
                 >
                   {link.label}
@@ -100,7 +100,7 @@ const Navbar = () => {
             side="right"
             className="p-6 bg-white/10 backdrop-blur-md"
           >
-            <div className="w-14 h-14 flex-center rounded-full mb-4 bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-xl font-['El_Messiri'] font-semibold px-4 py-2">
+            <div className="w-14 h-14 flex-center rounded-full mb-4 bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-xl font-elMessiri font-semibold px-4 py-2">
               <Link href="/">
                 <SheetClose>AB</SheetClose>
               </Link>
@@ -113,7 +113,7 @@ const Navbar = () => {
                     : link.href === "/#" + activeSection;
 
                 return (
-                  link.label !== "ab" && (
+                  link.label !== "AB" && (
                     <Link key={index} href={link.href} className="w-fit">
                       <SheetClose
                         className={`text-2xl capitalize ${

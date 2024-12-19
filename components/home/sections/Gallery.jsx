@@ -17,7 +17,7 @@ const Gallery = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="font-['El_Messiri'] text-5xl 2xl:text-7xl font-bold text-[#002663]"
+        className="font-elMessiri text-5xl 2xl:text-7xl font-bold text-[#002663]"
       >
         GALLERY
       </motion.h2>

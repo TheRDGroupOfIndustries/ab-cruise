@@ -23,7 +23,7 @@ const ContactUs = () => {
       viewport={{ once: false, amount: 0.25 }}
     >
       <motion.h2
-        className="font-['El_Messiri'] text-5xl 2xl:text-7xl font-bold text-[#002663] mb-4"
+        className="font-elMessiri text-5xl 2xl:text-7xl font-bold text-[#002663] mb-4"
         variants={fadeIn("up", 0.2)}
       >
         Contact us
@@ -122,7 +122,7 @@ const ContactUs = () => {
                   <FaPhone className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Call us:</p>
                   <Link
-                    href="tel:+919873214524"
+                    href="https://wa.link/d0r9v3"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
                     <span className="hover-link">+91 9873214524</span>

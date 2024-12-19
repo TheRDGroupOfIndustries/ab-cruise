@@ -1,14 +1,56 @@
+import { FaUtensils } from "react-icons/fa";
+import { GiPartyPopper } from "react-icons/gi";
+import { BsSoundwave } from "react-icons/bs";
+
+export const aboutUsData = {
+  title: "ABOUT US",
+  description:
+    "At AB Cruise, we redefine luxury and elegance on the waters of the Ganges. Established with a vision to offer unmatched hospitality and exclusive experiences, we pride ourselves on being the first choice for private yacht services in Varanasi. Our passion for excellence is reflected in every detail, from the impeccable design of our yachts to the personalized services we provide.",
+  subDescription:
+    "We are more than a yacht provider—we are curators of moments, ensuring that your journey with us is memorable, safe, and infused with the charm of Varanasi’s timeless beauty. Whether you seek tranquility, celebration, or adventure, AB Cruise is dedicated to making your time on the Ganges truly extraordinary.",
+  services: [
+    {
+      icon: <FaUtensils className="text-4xl mx-auto" />,
+      title: "Gourmet Dining",
+      description:
+        "Savor delicious meals prepared fresh onboard with a touch of luxury.",
+    },
+    {
+      icon: <GiPartyPopper className="text-4xl mx-auto" />,
+      title: "Event Celebrations",
+      description:
+        "Host memorable events with customized decor and exclusive settings.",
+    },
+    {
+      icon: <BsSoundwave className="text-4xl mx-auto" />,
+      title: "Entertainment Systems",
+      description:
+        "Enjoy a premium music system and entertainment for all occasions.",
+    },
+    // {
+    //   icon: <MdSafetyDivider className="text-4xl mx-auto" />,
+    //   title: "Safety Assured",
+    //   description: "Equipped with modern safety measures and trained crew for a worry-free journey.",
+    // },
+    // {
+    //   icon: <FiAnchor className="text-4xl mx-auto" />,
+    //   title: "Custom Stops",
+    //   description: "Plan your journey with exclusive stops to explore iconic ghats and landmarks.",
+    // },
+  ],
+};
+
 export const links = [
   { href: "/", label: "home" },
   { href: "/#about-us", label: "about us" },
   { href: "/#gallery", label: "gallery" },
-  { href: "/", label: "ab" },
-  { href: "/#booking-info", label: "booking information" },
-  // { href: "/#testimonials", label: "Testimonials" },
+  { href: "/", label: "AB" },
+  { href: "/#booking-info", label: "bookings" },
   { href: "/#contact-us", label: "contact us" },
+  { href: "/#blogs", label: "Blogs" },
 ];
 
-export const cruiseOptions = [
+export const bookingOptions = [
   {
     title: "Sunrise cruise",
     href: "https://wa.link/d0r9v3",
@@ -32,7 +74,7 @@ export const cruiseOptions = [
     ],
   },
   {
-    title: "Private Charter",
+    title: "Evening cruise",
     href: "https://wa.link/d0r9v3",
     duration: "60 min ride",
     features: [
@@ -43,6 +85,23 @@ export const cruiseOptions = [
     ],
   },
 ];
+
+export const privateCharter = {
+  title: "Private Charter",
+  href: "https://wa.link/d0r9v3",
+  duration: "Flexible duration",
+  features: [
+    "Customized itinerary",
+    "Exclusive privacy",
+    "Personalized decor for events",
+    "Lavish cushioned seating",
+    "FREE high-tea service",
+    "Double-decker yacht experience",
+    "Safety gear provided",
+  ],
+  highlight:
+    "Tailored for exclusive celebrations, corporate events, romantic getaways, and spiritual experiences.",
+};
 
 export const galleryImages = [
   "/assets/gallery/g1.jpeg",
@@ -79,7 +138,7 @@ export const testimonials = [
       "This cruise exceeded all expectations. From the moment we stepped aboard, it was clear this wasn't just another tourist attraction - it was a premium experience.",
   },
   {
-    name: "David Thompson",
+    name: "Arjun Mehta",
     pfp: "/assets/user.png",
     role: "Business Executive",
     testimonial:
@@ -93,35 +152,35 @@ export const testimonials = [
       "Having lived here for years, I've tried many boat tours. This one stands out for their attention to detail and knowledge of local marine life and history.",
   },
   {
-    name: "James Wilson",
+    name: "Rajiv Kumar",
     pfp: "/assets/user.png",
     role: "Adventure Seeker",
     testimonial:
       "The noon cruise was perfect for spotting wildlife. We saw dolphins and various sea birds. The crew's knowledge about marine life made it educational and fun.",
   },
   {
-    name: "Maria Santos",
+    name: "Sneha Verma",
     pfp: "/assets/user.png",
     role: "Honeymoon Couple",
     testimonial:
       "My husband and I chose the sunset cruise for our honeymoon. The romantic atmosphere and stunning views created memories we'll cherish forever.",
   },
   {
-    name: "Tom Anderson",
+    name: "Amit Desai",
     pfp: "/assets/user.png",
     role: "Marine Biology Student",
     testimonial:
       "The ecological information provided during the tour was fascinating. It's great to see a company that cares about marine conservation while providing entertainment.",
   },
   {
-    name: "Grace Kim",
+    name: "Pooja Nair",
     pfp: "/assets/user.png",
     role: "Event Planner",
     testimonial:
       "Organized a birthday celebration on the private charter. The staff went above and beyond to make it special. The setup and service were absolutely perfect.",
   },
   {
-    name: "Robert Mitchell",
+    name: "Manoj Gupta",
     pfp: "/assets/user.png",
     role: "Retired Teacher",
     testimonial:

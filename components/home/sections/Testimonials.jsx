@@ -56,7 +56,7 @@ const Testimonials = () => {
       viewport={{ once: false, amount: 0.25 }}
     >
       <motion.h2
-        className="font-['El_Messiri'] text-5xl 2xl:text-7xl font-bold text-[#002663]"
+        className="font-elMessiri text-5xl 2xl:text-7xl font-bold text-[#002663]"
         variants={fadeIn("up", 0.2)}
       >
         What our <span className="text-blue-600">customers</span> says
@@ -119,7 +119,7 @@ export default Testimonials;
 const TestimonialCard = ({ name, pfp, role, testimonial }) => {
   return (
     <div className="min-w-[400px] p-8 rounded-lg bg-blue-50 shadow-md shadow-gray-300 hover:shadow-xl hover:bg-blue-100 scale-95 hover:scale-100 transition-all ease-in-out duration-300">
-      <div className="font-['El_Messiri'] w-full text-center text-4xl font-bold mb-4">
+      <div className="font-elMessiri w-full text-center text-4xl font-bold mb-4">
         &quot;
       </div>
       <p className="text-gray-600 mb-6">{testimonial}</p>
@@ -132,7 +132,7 @@ const TestimonialCard = ({ name, pfp, role, testimonial }) => {
             height={40}
             className="w-8 h-8 rounded-full"
           />
-          <h4 className="font-['El_Messiri'] font-semibold text-lg">{name}</h4>
+          <h4 className="font-elMessiri font-semibold text-lg">{name}</h4>
         </div>
         <p className="text-gray-500 text-sm">{role}</p>
       </div>
