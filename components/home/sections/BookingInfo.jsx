@@ -32,7 +32,10 @@ const BookingInfo = () => {
           You can book our boat on lowest price!
         </motion.p>
 
-        <div className="group relative rounded-lg bg-opacity-20 bg-white/70 p-4 mb-4 backdrop-blur-md border border-white/70 hover:bg-white/75 transition-all ease-in-out duration-300">
+        <motion.div
+          variants={fadeIn("up", 0.1)}
+          className="group relative rounded-lg bg-opacity-20 bg-white/70 p-4 mb-4 backdrop-blur-md border border-white/70 hover:bg-white/75 transition-all ease-in-out duration-300"
+        >
           <div className="absolute top-0 left-4 font-elMessiri font-semibold text-md md:text-lg 2xl:text-xl bg-white text-[#002663] rounded-b-md px-4 inline-block mb-6">
             {privateCharter.title}
           </div>
@@ -56,7 +59,7 @@ const BookingInfo = () => {
               <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
             </Button>
           </Link>
-        </div>
+        </motion.div>
         <motion.div
           variants={fadeIn("up", 0.7)}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -73,7 +76,7 @@ const BookingInfo = () => {
 const BookingCard = ({ title, duration, features, href, index }) => {
   return (
     <motion.div
-      variants={fadeIn("up", 0.1 * index)}
+      variants={fadeIn("up", 0.1 * index + 1)}
       className="group relative rounded-lg bg-opacity-20 bg-white/20 p-4 backdrop-blur-md border border-white/70 hover:bg-white/30 transition-all ease-in-out duration-300"
     >
       <div className="absolute top-0 left-4 font-elMessiri font-semibold text-md md:text-lg 2xl:text-xl bg-white text-[#002663] rounded-b-md px-4 inline-block mb-6">
