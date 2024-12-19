@@ -6,6 +6,7 @@ import { fadeIn, staggerContainer } from "@/lib/utils";
 import { bookingOptions, privateCharter } from "@/constant/data";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import BlurFade from "@/components/ui/blur-fade";
 
 const BookingInfo = () => {
   return (
@@ -28,19 +29,19 @@ const BookingInfo = () => {
           Booking Information
         </motion.h2>
 
-        <motion.p variants={fadeIn("down", 0.5)} className="text-xl mt-2 mb-12">
+        <motion.p variants={fadeIn("down", 0.5)} className="text-xl mt-2 mb-8">
           You can book our boat on lowest price!
         </motion.p>
 
         <motion.div
-          variants={fadeIn("up", 0.1)}
-          className="group relative rounded-lg bg-opacity-20 bg-white/70 p-4 mb-4 backdrop-blur-md border border-white/70 hover:bg-white/75 transition-all ease-in-out duration-300"
+          variants={fadeIn("up", 0.5)}
+          className="group relative rounded-lg bg-opacity-20 bg-white/70 p-4 mb-8 backdrop-blur-md border border-white/70 hover:bg-white/75 transition-all ease-in-out duration-300"
         >
           <div className="absolute top-0 left-4 font-elMessiri font-semibold text-md md:text-lg 2xl:text-xl bg-white text-[#002663] rounded-b-md px-4 inline-block mb-6">
             {privateCharter.title}
           </div>
 
-          <h2 className="font-elMessiri text-2xl 2xl:text-4xl font-bold mt-12 mb-6 text-[#002663]">
+          <h2 className="font-elMessiri text-2xl md:text-4xl 2xl:text-5xl font-bold mt-12 mb-6 text-[#002663]">
             Get a Quote
           </h2>
 
@@ -54,12 +55,13 @@ const BookingInfo = () => {
           </div>
 
           <Link href={privateCharter.href}>
-            <Button className="w-full text-white bg-[#002663] text-lg transition-colors">
+            <Button className="w-full text-white bg-[#002663] text-lg transition-colors font-elMessiri font-extrabold">
               Book Now
               <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
             </Button>
           </Link>
         </motion.div>
+
         <motion.div
           variants={fadeIn("up", 0.7)}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -97,7 +99,7 @@ const BookingCard = ({ title, duration, features, href, index }) => {
       </ul>
 
       <Link href={href}>
-        <Button className="w-full bg-white text-[#002663] hover:bg-gray-100 transition-colors">
+        <Button className="w-full bg-white text-[#002663] hover:bg-gray-100 transition-colors font-elMessiri font-extrabold">
           Book Now
           <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
         </Button>

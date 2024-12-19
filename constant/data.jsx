@@ -1,6 +1,4 @@
-import { FaUtensils } from "react-icons/fa";
-import { GiPartyPopper } from "react-icons/gi";
-import { BsSoundwave } from "react-icons/bs";
+import { FaShip, FaUserShield, FaEye, FaUsers } from "react-icons/fa";
 
 export const aboutUsData = {
   title: "ABOUT US",
@@ -10,33 +8,29 @@ export const aboutUsData = {
     "We are more than a yacht provider—we are curators of moments, ensuring that your journey with us is memorable, safe, and infused with the charm of Varanasi’s timeless beauty. Whether you seek tranquility, celebration, or adventure, AB Cruise is dedicated to making your time on the Ganges truly extraordinary.",
   services: [
     {
-      icon: <FaUtensils className="text-4xl mx-auto" />,
-      title: "Gourmet Dining",
+      icon: <FaShip className="text-4xl mx-auto" />,
+      title: "Luxurious Yachts",
       description:
-        "Savor delicious meals prepared fresh onboard with a touch of luxury.",
+        "Experience a modern touch of luxury for the first time in Varanasi. Our yachts are designed to be luxurious, minimal, and modern - especially for you.",
     },
     {
-      icon: <GiPartyPopper className="text-4xl mx-auto" />,
-      title: "Event Celebrations",
+      icon: <FaUserShield className="text-4xl mx-auto" />,
+      title: "Private and Personalized",
       description:
-        "Host memorable events with customized decor and exclusive settings.",
+        "Exclusive privacy with customized services to make your journey unforgettable.",
     },
     {
-      icon: <BsSoundwave className="text-4xl mx-auto" />,
-      title: "Entertainment Systems",
+      icon: <FaEye className="text-4xl mx-auto" />,
+      title: "Breathtaking Views",
       description:
-        "Enjoy a premium music system and entertainment for all occasions.",
+        "Sail along the sacred river and witness the ghats of Varanasi from a unique perspective.",
     },
-    // {
-    //   icon: <MdSafetyDivider className="text-4xl mx-auto" />,
-    //   title: "Safety Assured",
-    //   description: "Equipped with modern safety measures and trained crew for a worry-free journey.",
-    // },
-    // {
-    //   icon: <FiAnchor className="text-4xl mx-auto" />,
-    //   title: "Custom Stops",
-    //   description: "Plan your journey with exclusive stops to explore iconic ghats and landmarks.",
-    // },
+    {
+      icon: <FaUsers className="text-4xl mx-auto" />,
+      title: "Professional Crew",
+      description:
+        "Trained and courteous crew ensuring a safe, smooth, and delightful journey.",
+    },
   ],
 };
 

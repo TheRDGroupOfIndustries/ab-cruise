@@ -12,7 +12,7 @@ const AboutUs = () => {
       variants={staggerContainer(0.2, 0.1)}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: false, amount: 0.15 }}
     >
       {/* background Image */}
       <motion.div
@@ -27,8 +27,8 @@ const AboutUs = () => {
       {/* about us contents */}
       <div className="relative z-20 container mx-auto p-4 overflow-hidden">
         <motion.div
-          className="lg:max-w-4xl space-y-8"
-          variants={fadeIn("left", 0.2)}
+          className="lg:max-w-3xl space-y-4"
+          variants={fadeIn("right", 0.2)}
         >
           <motion.h2
             className="font-elMessiri text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-[#002663]"
@@ -38,14 +38,14 @@ const AboutUs = () => {
           </motion.h2>
 
           <motion.p
-            className="text-gray-700 text-base sm:text-lg md:text-xl"
+            className="text-gray-700 text-base sm:text-lg md:text-xl text-justify text-balance"
             variants={fadeIn("up", 0.4)}
           >
             {aboutUsData.description}
           </motion.p>
 
           <motion.p
-            className="text-gray-700 text-base sm:text-lg md:text-xl"
+            className="text-gray-700 text-base sm:text-lg md:text-xl text-justify text-balance"
             variants={fadeIn("up", 0.5)}
           >
             {aboutUsData.subDescription}
@@ -53,13 +53,13 @@ const AboutUs = () => {
 
           {/* Icons Section */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pt-4 md:pt-8"
+            className="w-fit grid grid-cols-2 sm:grid-cols-2 gap-8 pt-4 md:pt-8"
             variants={fadeIn("up", 0.6)}
           >
             {aboutUsData.services.map((service, index) => (
               <motion.div
                 key={index}
-                className="text-center space-y-2"
+                className="w-44 lg:w-80 text-center space-y-2"
                 variants={fadeIn("up", 0.7 + index * 0.1)}
               >
                 {service.icon}

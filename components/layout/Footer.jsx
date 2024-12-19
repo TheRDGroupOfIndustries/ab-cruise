@@ -29,17 +29,23 @@ const Footer = () => {
       >
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Logo and Description Section */}
+            {/* logo and description section */}
             <motion.div variants={fadeIn("left", 0.3)}>
               <h2 className="text-2xl md:text-4xl 2xl:text-5xl font-bold mb-4">
-                <Link href="/" className="w-fit hover-link">
+                <Link
+                  href="/"
+                  className="w-fit hover-link font-elMessiri font-bold"
+                >
                   Ab Cruise
                 </Link>
               </h2>
-              <p className="text-sm italic mb-4">
-                Lorem ipsum dolor sit amet consectetur. Fringilla in mattis eget
-                in velit volutpat consequat sollicitudin. Quis imperdiet non
-                enim dolor ipsum amet mauris.
+              <p className="text-sm italic text-justify text-balance mb-4">
+                Experience the timeless charm of Varanasi with{" "}
+                <strong>AB Cruise</strong>, where luxury meets tradition on the
+                serene waters of the Ganges. From private celebrations to
+                tranquil getaways, we create unforgettable memories with
+                impeccable service and unmatched elegance. Sail with us and
+                redefine your journey.
               </p>
               <div className="flex gap-4">
                 <Link
@@ -72,7 +78,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map(
                   (link, index) =>
-                    link.label !== "ab" && (
+                    link.label !== "AB" && (
                       <motion.li
                         key={index}
                         variants={fadeIn("up", 0.5 + index * 0.1)}

@@ -7,6 +7,7 @@ import { fadeIn, staggerContainer } from "@/lib/utils";
 import { testimonials } from "@/constant/data";
 import { Button } from "@/components/ui/button";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import BlurFade from "@/components/ui/blur-fade";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,9 +84,9 @@ const Testimonials = () => {
             className="flex gap-6 py-2"
           >
             {testimonials.concat(testimonials).map((testimonial, index) => (
-              <motion.div key={index} variants={fadeIn("up", index * 0.2)}>
+              <BlurFade key={index} delay={0.08} inView>
                 <TestimonialCard {...testimonial} />
-              </motion.div>
+              </BlurFade>
             ))}
           </motion.div>
         </motion.div>
@@ -98,16 +99,22 @@ const Testimonials = () => {
         <Button
           onClick={handlePrev}
           size="icon"
-          className="w-12 h-12 rounded-full bg-[#002663] text-white flex-center active:translate-y-0 active:-translate-x-1"
+          className="group w-10 h-10 rounded-full bg-[#002663] text-white flex-center active:translate-y-0"
         >
-          <IoIosArrowBack size={24} />
+          <IoIosArrowBack
+            size={20}
+            className="group-active:-translate-x-1 ease-in-out duration-300"
+          />
         </Button>
         <Button
           onClick={handleNext}
           size="icon"
-          className="w-12 h-12 rounded-full bg-[#002663] text-white flex-center active:translate-y-0 active:translate-x-1"
+          className="group w-10 h-10 rounded-full bg-[#002663] text-white flex-center active:translate-y-0"
         >
-          <IoIosArrowForward size={24} />
+          <IoIosArrowForward
+            size={20}
+            className="group-active:translate-x-1 ease-in-out duration-300"
+          />
         </Button>
       </motion.div>
     </motion.section>
@@ -118,7 +125,7 @@ export default Testimonials;
 
 const TestimonialCard = ({ name, pfp, role, testimonial }) => {
   return (
-    <div className="min-w-[400px] p-8 rounded-lg bg-blue-50 shadow-md shadow-gray-300 hover:shadow-xl hover:bg-blue-100 scale-95 hover:scale-100 transition-all ease-in-out duration-300">
+    <div className="min-w-[380px] lg:min-w-[400px] p-8 rounded-lg bg-blue-50 shadow-md shadow-gray-300 hover:shadow-xl hover:bg-blue-100 scale-95 hover:scale-100 transition-all ease-in-out duration-300">
       <div className="font-elMessiri w-full text-center text-4xl font-bold mb-4">
         &quot;
       </div>
