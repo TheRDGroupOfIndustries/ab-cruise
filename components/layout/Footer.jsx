@@ -36,7 +36,7 @@ const Footer = () => {
                   href="/"
                   className="w-fit hover-link font-elMessiri font-bold"
                 >
-                  Ab Cruise
+                  AB Cruise
                 </Link>
               </h2>
               <p className="text-sm italic text-justify text-balance mb-4">

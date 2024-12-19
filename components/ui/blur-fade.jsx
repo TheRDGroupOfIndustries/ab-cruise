@@ -56,3 +56,16 @@ export default function BlurFade({
     </AnimatePresence>
   );
 }
+
+{
+  /* <div className="absolute inset-0 z-20">
+          <Meteors number={30} />
+          <Particles
+            className="absolute inset-0"
+            quantity={300}
+            ease={10}
+            color={"#ffffff"}
+            refresh
+          />
+        </div> */
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -10,12 +11,25 @@ import BlurFade from "@/components/ui/blur-fade";
 
 const Hero = () => {
   const router = useRouter();
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
   const handleBook = () => router.push("/#booking-info");
+
+  const handleMouseMove = (e) => {
+    setMousePos({ x: e.pageX - 700, y: e.pageY - 350 });
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <section
       id="hero"
-      className="select-none relative w-full h-[50vh] lg:h-screen p-4 overflow-hidden"
+      className="select-none relative w-full h-[55vh] md:h-[70vh] lg:h-screen p-4 overflow-hidden"
     >
       <motion.div
         variants={staggerContainer(0.2, 0.3)}
@@ -27,17 +41,15 @@ const Hero = () => {
           backgroundImage: "linear-gradient(165deg, #0E5AD6, #002663, #0060FA)",
         }}
       >
-        {/* <div className="absolute inset-0 z-20">
-          <Meteors number={30} />
-          <Particles
-            className="absolute inset-0"
-            quantity={300}
-            ease={10}
-            color={"#ffffff"}
-            refresh
-          />
-        </div> */}
-        <div className="w-full max-w-6xl h-full p-4 sm:p-8 md:p-12 relative">
+        {/* mouse tracking ball*/}
+        <div
+          className="hidden lg:block absolute z-[1] w-60 h-60 bg-[#00266381] rounded-full transition-transform duration-300 ease-out"
+          style={{ transform: `translate(${mousePos.x}px, ${mousePos.y}px)` }}
+        ></div>
+
+        <div className="absolute inset-0 z-[2] backdrop-blur-2xl"></div>
+
+        <div className="w-full max-w-6xl h-full p-4 sm:p-8 md:p-12 relative z-10">
           <div className="w-full h-full max-h-full relative flex flex-col items-start justify-start pt-8 2xl:pt-12">
             <div className="w-full">
               <WordPullUp
@@ -68,7 +80,7 @@ const Hero = () => {
             delay={0.8}
             inView
             yOffset={40}
-            className="absolute z-30 left-0 bottom-0 w-full h-[80%] sm:h-[60%] lg:h-[70%] xl:h-[80%] 2xl:h-[90%]"
+            className="absolute z-30 left-0 bottom-0 w-full h-[80%] sm:h-[60%] md:h-[80%] xl:h-[95%] 2xl:h-[90%]"
           >
             <Image
               src="/assets/boat.png"
