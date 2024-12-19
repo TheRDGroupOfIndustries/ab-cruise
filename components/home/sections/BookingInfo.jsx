@@ -11,7 +11,8 @@ const BookingInfo = () => {
   return (
     <section
       id="booking-info"
-      className="select-none relative bg-gradient-to-b from-30% from-[#020202] to-[#0060FA] text-white py-16 animate-gradient overflow-hidden"
+      //  bg-[length:400%_400%]
+      className="select-none relative bg-gradient-to-b from-30% from-[#020202] via-[#002663] to-[#0060FA] text-white py-16 animate-gradient transition-all ease-in-out duration-300 overflow-hidden"
     >
       <motion.div
         variants={staggerContainer(0.2, 0.3)}
@@ -27,10 +28,7 @@ const BookingInfo = () => {
           Booking Information
         </motion.h2>
 
-        <motion.p
-          variants={fadeIn("down", 0.5)}
-          className="text-xl mt-2 mb-12"
-        >
+        <motion.p variants={fadeIn("down", 0.5)} className="text-xl mt-2 mb-12">
           You can book our boat on lowest price!
         </motion.p>
 

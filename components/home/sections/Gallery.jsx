@@ -4,6 +4,7 @@ import Image from "next/image";
 import { galleryImages } from "@/constant/data";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
+import BlurFade from "@/components/ui/blur-fade";
 
 const Gallery = () => {
   return (
@@ -28,9 +29,10 @@ const Gallery = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
       >
         {galleryImages.map((image, index) => (
-          <motion.div
+          <BlurFade
             key={index}
-            variants={fadeIn("up", 0.1 * index)}
+            delay={0.25 + index * 0.05}
+            inView
             className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative h-[250px]"
           >
             <Image
@@ -40,7 +42,7 @@ const Gallery = () => {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </motion.div>
+          </BlurFade>
         ))}
       </motion.div>
     </section>

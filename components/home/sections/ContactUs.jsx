@@ -16,7 +16,7 @@ const ContactUs = () => {
   return (
     <motion.section
       id="contact-us"
-      className="select-none p-4 md:p-8"
+      className="select-none p-4 md:p-8 overflow-hidden"
       variants={staggerContainer(0.2, 0.1)}
       initial="hidden"
       whileInView="show"
@@ -47,7 +47,7 @@ const ContactUs = () => {
           {/* Left Form Section */}
           <motion.div
             className="bg-white/80 backdrop-blur-md rounded-3xl p-4"
-            variants={fadeIn("left", 0.6)}
+            variants={fadeIn("right", 0.6)}
           >
             <form onSubmit={handleSubmit} className="space-y-4">
               <motion.div className="space-y-1" variants={fadeIn("up", 0.7)}>
@@ -94,7 +94,7 @@ const ContactUs = () => {
           {/* Right Contact Options */}
           <motion.div
             className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-black"
-            variants={fadeIn("right", 0.6)}
+            variants={fadeIn("left", 0.6)}
           >
             <motion.h2
               className="text-4xl text-gray-950 mb-2"
@@ -117,7 +117,7 @@ const ContactUs = () => {
                 {/* Phone */}
                 <motion.div
                   className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
-                  variants={fadeIn("up", 0.9)}
+                  variants={fadeIn("up", 0.5)}
                 >
                   <FaPhone className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Call us:</p>
@@ -132,7 +132,7 @@ const ContactUs = () => {
                 {/* Email */}
                 <motion.div
                   className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
-                  variants={fadeIn("up", 1)}
+                  variants={fadeIn("up", 0.8)}
                 >
                   <FaEnvelope className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Email us:</p>

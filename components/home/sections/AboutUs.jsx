@@ -10,7 +10,7 @@ const AboutUs = () => {
   return (
     <motion.section
       id="about-us"
-      className="select-none w-full lg:max-h-[calc(100vh-4rem)] relative overflow-hidden"
+      className="select-none w-full h-fit relative overflow-hidden"
       variants={staggerContainer(0.2, 0.1)}
       initial="hidden"
       whileInView="show"
@@ -21,10 +21,13 @@ const AboutUs = () => {
         variants={fadeIn("left", 0.3)}
         className="absolute inset-0 z-0 bg-[url('/assets/aboutBoat.jpeg')] bg-cover bg-no-repeat bg-center overflow-hidden"
       ></motion.div>
-      <div className="absolute inset-0 z-10 bg-gradient-to-br md:bg-gradient-to-r from-40% from-white to-transparent"></div>
+      <motion.div
+        variants={fadeIn("right", 0.3)}
+        className="absolute inset-0 z-10 bg-gradient-to-br md:bg-gradient-to-r from-40% from-white to-transparent"
+      ></motion.div>
 
       {/* about us contents */}
-      <div className="relative z-20 container mx-auto px-4 py-16 sm:py-24 md:py-32 lg:py-40 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="relative z-20 container mx-auto p-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <motion.div className="space-y-8" variants={fadeIn("left", 0.2)}>
           <motion.h2
             className="font-['El_Messiri'] text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-[#002663]"
