@@ -23,7 +23,7 @@ const Hero = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="relative h-full w-full rounded-2xl flex-center  animate-slide-up overflow-hidden"
+        className="relative h-full w-full rounded-xl flex-center  animate-slide-up overflow-hidden"
         style={{
           backgroundImage: "linear-gradient(165deg, #0E5AD6, #002663, #0060FA)",
         }}
