@@ -173,10 +173,10 @@ module.exports = {
         },
         waves: {
           "0%": {
-            transform: "translate(-80%, -65%) rotate(0deg)",
+            transform: "translate(-30%, -65%) rotate(0deg)",
           },
           "100%": {
-            transform: "translate(-50%, -75%) rotate(225deg)",
+            transform: "translate(-50%, -80%) rotate(360deg)",
           },
         },
       },
