@@ -85,11 +85,11 @@ module.exports = {
         slideUp: {
           "0%": {
             opacity: "0",
-            transform: "translateY(100px)",
+            transform: "translateY(150px)",
           },
           "50%": {
             opacity: "0.5",
-            transform: "translateY(50px)",
+            transform: "translateY(80px)",
           },
           "100%": {
             opacity: "1",
@@ -173,10 +173,10 @@ module.exports = {
         },
         waves: {
           "0%": {
-            transform: "translate(-50%, -75%) rotate(0deg)",
+            transform: "translate(-80%, -65%) rotate(0deg)",
           },
           "100%": {
-            transform: "translate(-50%, -75%) rotate(360deg)",
+            transform: "translate(-50%, -75%) rotate(225deg)",
           },
         },
       },

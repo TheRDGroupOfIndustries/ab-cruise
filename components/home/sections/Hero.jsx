@@ -28,7 +28,7 @@ const Hero = () => {
           backgroundImage: "linear-gradient(165deg, #0E5AD6, #002663, #0060FA)",
         }}
       >
-        <div class="waves z-40"></div>
+        <div class="waves z-50"></div>
 
         <div className="w-full max-w-6xl h-full p-4 sm:p-8 md:p-12 relative z-10">
           <div className="w-full h-full max-h-full relative flex flex-col items-start justify-start pt-8 2xl:pt-12">
