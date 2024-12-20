@@ -62,7 +62,7 @@ const PrivateCharter = () => {
         Get a Quote
       </h2>
 
-      <div className="w-fit grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-lg">
+      <div className="w-fit grid grid-cols-1 md:grid-cols-3 xl:md:grid-cols-4 gap-4 mb-6 text-lg">
         {privateCharter.features.map((feature, idx) => (
           <div key={idx} className="flex items-center">
             <span className="mr-2">•</span>
@@ -71,7 +71,7 @@ const PrivateCharter = () => {
         ))}
       </div>
 
-      <Link href={privateCharter.href}>
+      <Link href={privateCharter.href} target="_blank">
         <Button
           size="lg"
           className="w-fit px-5 bg-white text-[#002663] hover:bg-gray-100 transition-colors font-elMessiri font-extrabold"
@@ -107,7 +107,7 @@ const BookingCard = ({ title, duration, features, href, index }) => {
         ))}
       </ul>
 
-      <Link href={href}>
+      <Link href={href} target="_blank">
         <Button className="w-full bg-white text-[#002663] hover:bg-gray-100 transition-colors font-elMessiri font-extrabold">
           Book Now
           <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />

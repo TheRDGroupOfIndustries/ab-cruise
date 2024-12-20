@@ -85,6 +85,7 @@ const Footer = () => {
                       >
                         <Link
                           href={link.href}
+                          target="_blank"
                           className="w-fit flex items-center group"
                         >
                           <span className="capitalize font-bold hover-link">
@@ -105,6 +106,7 @@ const Footer = () => {
                 <motion.div variants={fadeIn("up", 0.5)}>
                   <Link
                     href="tel:+919873214524"
+                    target="_blank"
                     className="flex items-center gap-2"
                   >
                     <FaPhone className="w-4 h-4" />
@@ -114,6 +116,7 @@ const Footer = () => {
                 <motion.div variants={fadeIn("up", 0.6)}>
                   <Link
                     href="mailto:support@abcruise.com"
+                    target="_blank"
                     className="flex items-center gap-2"
                   >
                     <FaEnvelope className="w-4 h-4" />
@@ -123,11 +126,13 @@ const Footer = () => {
                 <motion.div variants={fadeIn("up", 0.7)}>
                   <Link
                     href="https://maps.app.goo.gl/h4aJfGBaoJuBqqB66"
+                    target="_blank"
                     className="flex items-center gap-2"
                   >
                     <FaMapMarkerAlt className="w-4 h-4" />
                     <span className="hover-link">
-                    Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar Pradesh, India.
+                      Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar
+                      Pradesh, India.
                     </span>
                   </Link>
                 </motion.div>

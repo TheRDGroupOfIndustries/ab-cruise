@@ -123,6 +123,7 @@ const ContactUs = () => {
                   <p className="text-gray-800 mt-4">Call us:</p>
                   <Link
                     href="https://wa.link/d0r9v3"
+                    target="_blank"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
                     <span className="hover-link">+91 9873214524</span>
@@ -138,6 +139,7 @@ const ContactUs = () => {
                   <p className="text-gray-800 mt-4">Email us:</p>
                   <Link
                     href="mailto:support@abcruise.com"
+                    target="_blank"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
                     <span className="hover-link">support@abcruise.com</span>
