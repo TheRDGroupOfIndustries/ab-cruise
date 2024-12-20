@@ -1,30 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import BackgroundGradientAnimation from "@/components/ui/background-gradient-animation";
 import WordPullUp from "@/components/ui/word-pull-up";
 import BlurFade from "@/components/ui/blur-fade";
 
 const Hero = () => {
   const router = useRouter();
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
   const handleBook = () => router.push("/#booking-info");
-
-  const handleMouseMove = (e) => {
-    setMousePos({ x: e.pageX - 700, y: e.pageY - 350 });
-  };
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <section
@@ -36,20 +23,13 @@ const Hero = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="relative h-full w-full rounded-2xl flex-center bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] animate-slide-up overflow-hidden"
+        className="relative h-full w-full rounded-2xl animate-slide-up overflow-hidden"
         style={{
           backgroundImage: "linear-gradient(165deg, #0E5AD6, #002663, #0060FA)",
         }}
       >
-        {/* mouse tracking ball*/}
-        <div
-          className="hidden lg:block absolute z-[1] w-60 h-60 bg-[#00266381] rounded-full transition-transform duration-300 ease-out"
-          style={{ transform: `translate(${mousePos.x}px, ${mousePos.y}px)` }}
-        ></div>
-
-        <div className="absolute inset-0 z-[2] backdrop-blur-2xl"></div>
-
-        <div className="w-full max-w-6xl h-full p-4 sm:p-8 md:p-12 relative z-10">
+        <BackgroundGradientAnimation containerClassName="bg-gradient-to-br from-[#0E5AD6] via-[#002663] to-[#0060FA] p-4 sm:p-8 md:p-12 relative z-10">
+          {/* <div className="w-screen h-full "> */}
           <div className="w-full h-full max-h-full relative flex flex-col items-start justify-start pt-8 2xl:pt-12">
             <div className="w-full">
               <WordPullUp
@@ -91,7 +71,8 @@ const Hero = () => {
               className="w-full h-full object-contain"
             />
           </BlurFade>
-        </div>
+          {/* </div> */}
+        </BackgroundGradientAnimation>
       </motion.div>
     </section>
   );

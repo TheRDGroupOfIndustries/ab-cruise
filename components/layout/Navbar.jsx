@@ -79,7 +79,7 @@ const Navbar = () => {
                       ? isActive
                         ? "text-[#0060FA] underline underline-offset-8"
                         : "hover-link-underline text-gray-800 hover:text-[#0060FA]"
-                      : "rounded-full bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg lg:text-2xl font-elMessiri font-semibold px-2 py-1.5"
+                      : "rounded-full bg-gradient-to-tr from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg lg:text-2xl font-elMessiri font-semibold px-2 py-2.5"
                   } ease-in-out duration-300`}
                 >
                   {link.label}
