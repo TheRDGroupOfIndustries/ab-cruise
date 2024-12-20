@@ -52,8 +52,8 @@ export const bookingOptions = [
     features: [
       "Perfect for photographers",
       "Scenic morning views",
-      "Refreshments provided",
       "Best time for wildlife",
+      "Refreshments provided",
     ],
   },
   {
@@ -73,9 +73,9 @@ export const bookingOptions = [
     duration: "60 min ride",
     features: [
       "Exclusive boat access",
-      "Refreshments provided",
       "Catering available",
       "Perfect for events",
+      "Refreshments provided",
     ],
   },
 ];
@@ -85,12 +85,12 @@ export const privateCharter = {
   href: "https://wa.link/d0r9v3",
   duration: "Flexible duration",
   features: [
-    "Customized itinerary",
     "Exclusive privacy",
+    "Double-decker yacht experience",
     "Personalized decor for events",
+    "Customized itinerary",
     "Lavish cushioned seating",
     "Refreshments provided",
-    "Double-decker yacht experience",
     "Safety gear provided",
   ],
   highlight:

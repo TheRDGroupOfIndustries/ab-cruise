@@ -145,8 +145,8 @@ const Footer = () => {
             variants={fadeIn("up", 0.8)}
           >
             <Link href="/" className="w-fit hover-link">
-              &copy; {new Date().getFullYear()} All copyrights are reserved by
-              AB Cruise
+              &copy; {new Date().getFullYear()} All rights are reserved by AB
+              Cruise
             </Link>
           </motion.div>
         </div>

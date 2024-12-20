@@ -24,11 +24,11 @@ const Hero = () => {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
         className="relative h-full w-full rounded-2xl flex-center  animate-slide-up overflow-hidden"
-        // style={{
-        //   backgroundImage: "linear-gradient(165deg, #0E5AD6, #002663, #0060FA)",
-        // }}
+        style={{
+          backgroundImage: "linear-gradient(165deg, #0E5AD6, #002663, #0060FA)",
+        }}
       >
-        <div class="waves z-10"></div>
+        <div class="waves z-40"></div>
 
         <div className="w-full max-w-6xl h-full p-4 sm:p-8 md:p-12 relative z-10">
           <div className="w-full h-full max-h-full relative flex flex-col items-start justify-start pt-8 2xl:pt-12">
@@ -69,7 +69,7 @@ const Hero = () => {
               width={1000}
               height={1000}
               priority
-              className="w-full h-full object-contain"
+              className="select-none w-full h-full object-contain"
             />
           </BlurFade>
         </div>

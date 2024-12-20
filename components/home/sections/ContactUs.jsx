@@ -20,7 +20,7 @@ const ContactUs = () => {
       variants={staggerContainer(0.2, 0.1)}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: false, amount: 0.15 }}
     >
       <motion.h2
         className="font-elMessiri text-5xl 2xl:text-7xl font-bold text-[#002663] mb-4"
@@ -58,17 +58,20 @@ const ContactUs = () => {
               </motion.div>
               <motion.input
                 type="text"
+                name="name"
                 placeholder="Full name"
                 className="w-full p-4 rounded-lg bg-[#002663] text-white placeholder-gray-400"
                 variants={fadeIn("up", 0.8)}
               />
               <motion.input
                 type="email"
+                name="email"
                 placeholder="Your email"
                 className="w-full p-4 rounded-lg bg-[#002663] text-white placeholder-gray-400"
                 variants={fadeIn("up", 0.9)}
               />
               <motion.input
+                name="phone"
                 type="tel"
                 placeholder="Your Phone"
                 className="w-full p-4 rounded-lg bg-[#002663] text-white placeholder-gray-400"
@@ -76,6 +79,7 @@ const ContactUs = () => {
               />
               <motion.textarea
                 placeholder="Your message"
+                name="message"
                 rows="4"
                 className="w-full p-4 rounded-lg bg-[#002663] text-white placeholder-gray-400"
                 variants={fadeIn("up", 1.1)}

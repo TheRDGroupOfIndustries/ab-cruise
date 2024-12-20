@@ -19,7 +19,7 @@ const BookingInfo = () => {
         variants={staggerContainer(0.2, 0.3)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: false, amount: 0.15 }}
         className="container mx-auto px-4"
       >
         <motion.h2
