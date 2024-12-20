@@ -122,12 +122,12 @@ const Footer = () => {
                 </motion.div>
                 <motion.div variants={fadeIn("up", 0.7)}>
                   <Link
-                    href="https://maps.app.goo.gl/9999999999999999"
+                    href="https://maps.app.goo.gl/h4aJfGBaoJuBqqB66"
                     className="flex items-center gap-2"
                   >
                     <FaMapMarkerAlt className="w-4 h-4" />
                     <span className="hover-link">
-                      Near Ganga Ghat, Varanasi 000000, Uttar Pradesh, India
+                    Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar Pradesh, India.
                     </span>
                   </Link>
                 </motion.div>

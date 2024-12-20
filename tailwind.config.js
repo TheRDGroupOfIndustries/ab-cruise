@@ -171,6 +171,14 @@ module.exports = {
             transform: "translateY(-50%)",
           },
         },
+        waves: {
+          "0%": {
+            transform: "translate(-50%, -75%) rotate(0deg)",
+          },
+          "100%": {
+            transform: "translate(-50%, -75%) rotate(360deg)",
+          },
+        },
       },
       animation: {
         gradient: "gradient 3s ease infinite",
@@ -185,6 +193,9 @@ module.exports = {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
+
+        "waves-before": "waves 8s linear infinite",
+        "waves-after": "waves 15s linear infinite",
       },
     },
   },

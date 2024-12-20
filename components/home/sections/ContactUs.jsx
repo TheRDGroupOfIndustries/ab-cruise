@@ -152,11 +152,12 @@ const ContactUs = () => {
               className="w-full relative bg-white/80 backdrop-blur-md rounded-3xl mt-6"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.5258990248707!2d83.01160731501636!3d25.308068983850377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2e21ee6d5ca1%3A0x5f6ac1b6e7e4761e!2sGanga%20Ghat%2C%20Varanasi!5e0!3m2!1sen!2sin!4v1647850821016!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Hotel%20Ganga%20Monastery,%20Ganga%20Ghat,%20Varanasi,%20Uttar%20Pradesh,%20India.+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                title="Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar Pradesh, India."
                 className="w-full h-60 rounded-2xl"
                 loading="lazy"
+                style={{ border: 0 }}
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Location Map"
               ></iframe>
             </motion.div>
           </motion.div>

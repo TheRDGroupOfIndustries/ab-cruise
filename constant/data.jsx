@@ -52,7 +52,7 @@ export const bookingOptions = [
     features: [
       "Perfect for photographers",
       "Scenic morning views",
-      "Light breakfast included",
+      "Refreshments provided",
       "Best time for wildlife",
     ],
   },
@@ -73,7 +73,7 @@ export const bookingOptions = [
     duration: "60 min ride",
     features: [
       "Exclusive boat access",
-      "Customizable route",
+      "Refreshments provided",
       "Catering available",
       "Perfect for events",
     ],
@@ -89,7 +89,7 @@ export const privateCharter = {
     "Exclusive privacy",
     "Personalized decor for events",
     "Lavish cushioned seating",
-    "FREE high-tea service",
+    "Refreshments provided",
     "Double-decker yacht experience",
     "Safety gear provided",
   ],

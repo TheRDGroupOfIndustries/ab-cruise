@@ -33,34 +33,7 @@ const BookingInfo = () => {
           You can book our boat on lowest price!
         </motion.p>
 
-        <motion.div
-          variants={fadeIn("up", 0.5)}
-          className="group relative rounded-lg bg-opacity-10 bg-white/10 p-4 mb-8 backdrop-blur-md border border-white/70 hover:bg-white/30 transition-all ease-in-out duration-300"
-        >
-          <div className="absolute top-0 left-4 font-elMessiri font-semibold text-md md:text-lg 2xl:text-xl bg-white text-[#002663] rounded-b-md px-4 inline-block mb-6">
-            {privateCharter.title}
-          </div>
-
-          <h2 className="font-elMessiri text-2xl md:text-4xl 2xl:text-5xl font-bold mt-12 mb-6">
-            Get a Quote
-          </h2>
-
-          <div className="w-fit grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-lg">
-            {privateCharter.features.map((feature, idx) => (
-              <div key={idx} className="flex items-center">
-                <span className="mr-2">•</span>
-                {feature}
-              </div>
-            ))}
-          </div>
-
-          <Link href={privateCharter.href}>
-            <Button className="w-full bg-white text-[#002663] hover:bg-gray-100 transition-colors font-elMessiri font-extrabold">
-              Book Now
-              <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
-            </Button>
-          </Link>
-        </motion.div>
+        <PrivateCharter />
 
         <motion.div
           variants={fadeIn("up", 0.7)}
@@ -72,6 +45,42 @@ const BookingInfo = () => {
         </motion.div>
       </motion.div>
     </section>
+  );
+};
+
+const PrivateCharter = () => {
+  return (
+    <motion.div
+      variants={fadeIn("up", 0.5)}
+      className="group relative rounded-lg bg-opacity-10 bg-white/10 p-4 mb-8 backdrop-blur-md border border-white/70 hover:bg-white/30 transition-all ease-in-out duration-300"
+    >
+      <div className="absolute top-0 left-4 font-elMessiri font-semibold text-md md:text-lg 2xl:text-xl bg-white text-[#002663] rounded-b-md px-4 inline-block mb-6">
+        {privateCharter.title}
+      </div>
+
+      <h2 className="font-elMessiri text-2xl md:text-4xl 2xl:text-5xl font-bold mt-12 mb-6">
+        Get a Quote
+      </h2>
+
+      <div className="w-fit grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-lg">
+        {privateCharter.features.map((feature, idx) => (
+          <div key={idx} className="flex items-center">
+            <span className="mr-2">•</span>
+            {feature}
+          </div>
+        ))}
+      </div>
+
+      <Link href={privateCharter.href}>
+        <Button
+          size="lg"
+          className="w-fit px-5 bg-white text-[#002663] hover:bg-gray-100 transition-colors font-elMessiri font-extrabold"
+        >
+          Book Now
+          <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
+        </Button>
+      </Link>
+    </motion.div>
   );
 };
 
