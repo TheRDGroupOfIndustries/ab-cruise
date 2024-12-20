@@ -113,8 +113,7 @@ body {
 }
 
 .waves {
-  /* bg-gradient-to-br from-[#0E5AD6] via-[#002663] to-[#0060FA] */
-  @apply absolute h-[120px] lg:h-[200px]  shadow-[inset_0_0_50px_rgba(0,0,0,0.5)] transition-[500ms] br top-[173vh] sm:top-[445vh] lg:top-[600vh] xl:top-[700vh] inset-x-0 before:animate-waves-before before:rounded-[44%] after:animate-waves-after after:rounded-[44%];
+  @apply absolute h-[120px] lg:h-[250px] bg-gradient-to-br from-[#0E5AD6] via-[#002663] to-[#0060FA] shadow-[inset_0_0_50px_rgba(0,0,0,0.5)] transition-[500ms] bottom-0 inset-x-0 before:animate-waves-before before:rounded-[44%] after:animate-waves-after after:rounded-[44%];
 }
 .waves::before,
 .waves::after {
