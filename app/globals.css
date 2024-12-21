@@ -120,10 +120,10 @@ body {
   @apply content-[''] absolute w-[300vw] h-[300vw] top-[-65vw] -translate-x-2/4 -translate-y-3/4 left-2/4;
 }
 .waves::before {
-  @apply bg-gradient-to-br from-[#0E5AD6] via-[#002663] to-[#0060FA];
+  @apply bg-gradient-to-br from-blue-600 via-[#002663] to-blue-400;
 }
 .waves::after {
-  @apply bg-gradient-to-br from-[#0E5AD6] via-[#002663] to-[#0060FA];
+  @apply bg-gradient-to-br from-[#468dff] via-[#002663] to-blue-900;
 }
 
 /* .btn {

@@ -40,13 +40,13 @@ const Hero = () => {
               />
               <motion.p
                 variants={fadeIn("down", 0.5)}
-                className="font-dmSans text-white text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light leading-snug mb-4"
+                className="font-dmSans text-white text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light leading-snug mb-8"
               >
                 Experience comfort and luxury on the trails of Ganges!
               </motion.p>
               <motion.div
                 variants={fadeIn("up", 0.7)}
-                className="w-full flex justify-end"
+                className=""
               >
                 <Button
                   onClick={handleBook}
