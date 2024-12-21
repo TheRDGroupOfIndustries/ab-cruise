@@ -126,11 +126,11 @@ const ContactUs = () => {
                   <FaPhone className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Call us:</p>
                   <Link
-                    href="https://wa.link/d0r9v3"
+                    href="https://wa.me/+918353936768"
                     target="_blank"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
-                    <span className="hover-link">+91 9873214524</span>
+                    <span className="hover-link">+91 8353936768</span>
                   </Link>
                 </motion.div>
 

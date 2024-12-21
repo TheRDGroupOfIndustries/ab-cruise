@@ -47,7 +47,7 @@ export const links = [
 export const bookingOptions = [
   {
     title: "Sunrise cruise",
-    href: "https://wa.link/d0r9v3",
+    href: "https://wa.me/+918353936768",
     duration: "20 min ride",
     features: [
       "Perfect for photographers",
@@ -58,7 +58,7 @@ export const bookingOptions = [
   },
   {
     title: "Noon cruise",
-    href: "https://wa.link/d0r9v3",
+    href: "https://wa.me/+918353936768",
     duration: "40 min ride",
     features: [
       "Family-friendly atmosphere",
@@ -69,7 +69,7 @@ export const bookingOptions = [
   },
   {
     title: "Evening cruise",
-    href: "https://wa.link/d0r9v3",
+    href: "https://wa.me/+918353936768",
     duration: "60 min ride",
     features: [
       "Exclusive boat access",
@@ -82,7 +82,7 @@ export const bookingOptions = [
 
 export const privateCharter = {
   title: "Private Charter",
-  href: "https://wa.link/d0r9v3",
+  href: "https://wa.me/+918353936768",
   duration: "Flexible duration",
   features: [
     "Exclusive privacy",

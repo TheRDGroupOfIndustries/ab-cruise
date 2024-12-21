@@ -105,12 +105,12 @@ const Footer = () => {
               <div className="grid space-y-2">
                 <motion.div variants={fadeIn("up", 0.5)}>
                   <Link
-                    href="tel:+919873214524"
+                    href="tel:+918353936768"
                     target="_blank"
                     className="flex items-center gap-2"
                   >
                     <FaPhone className="w-4 h-4" />
-                    <span className="hover-link">+91 9873214524</span>
+                    <span className="hover-link">+91 8353936768</span>
                   </Link>
                 </motion.div>
                 <motion.div variants={fadeIn("up", 0.6)}>
