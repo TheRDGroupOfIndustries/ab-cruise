@@ -1,88 +1,105 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
 import { bookingOptions, privateCharter } from "@/constant/data";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import BlurFade from "@/components/ui/blur-fade";
 
 const BookingInfo = () => {
   return (
-    <section
-      id="booking-info"
-      //  bg-[length:400%_400%]
-      className="select-none relative bg-gradient-to-b from-30% from-[#020202] via-[#002663] to-[#0060FA] text-white py-16 animate-gradient transition-all ease-in-out duration-300 overflow-hidden"
-    >
-      <motion.div
-        variants={staggerContainer(0.2, 0.3)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.15 }}
-        className="container mx-auto px-4"
+    <>
+      <section
+        id="booking-info"
+        className="select-none relative p-4 md:px-6 lg:px-8 xl:px-10 lg:py-12 overflow-hidden"
       >
-        <motion.h2
-          variants={fadeIn("down", 0.3)}
-          className="font-elMessiri text-5xl 2xl:text-7xl font-bold"
-        >
-          Booking Information
-        </motion.h2>
-
-        <motion.p variants={fadeIn("down", 0.5)} className="text-xl mt-2 mb-8">
-          You can book our boat on lowest price!
-        </motion.p>
-
-        <PrivateCharter />
-
         <motion.div
-          variants={fadeIn("up", 0.7)}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={staggerContainer(0.2, 0.3)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.15 }}
+          className="container mx-auto px-4"
         >
-          {bookingOptions.map((option, index) => (
-            <BookingCard key={index} {...option} index={index} />
-          ))}
+          <motion.h2
+            variants={fadeIn("down", 0.3)}
+            className="font-elMessiri text-[#002663] text-5xl 2xl:text-7xl font-bold mb-6"
+          >
+            Booking Information
+          </motion.h2>
+
+          <PrivateCharter />
+
+          <motion.p
+            variants={fadeIn("down", 0.5)}
+            className="w-full font-elMessiri font-semibold text-[#002663] text-center text-2xl md:text-3xl lg:text-4xl mt-4 mb-6"
+          >
+            You can book our boat on{" "}
+            <span className="text-blue-600">lowest</span> price!
+          </motion.p>
+
+          <motion.div
+            variants={fadeIn("up", 0.7)}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {bookingOptions.map((option, index) => (
+              <BookingCard key={index} {...option} index={index} />
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </section>
+      </section>
+    </>
   );
 };
+
+export default BookingInfo;
 
 const PrivateCharter = () => {
   return (
     <motion.div
       variants={fadeIn("up", 0.5)}
-      className="group relative rounded-lg bg-opacity-10 bg-white/10 p-4 mb-8 backdrop-blur-md border border-white/70 hover:bg-white/30 transition-all ease-in-out duration-300"
+      className="group grid md:grid-cols-2 gap-4 relative rounded-lg mb-8 overflow-hidden"
     >
-      <div className="absolute top-0 left-4 font-elMessiri font-semibold text-md md:text-lg 2xl:text-xl bg-white text-[#002663] rounded-b-md px-4 inline-block mb-6">
-        {privateCharter.title}
-      </div>
+      <div id="left" className="w-full h-full space-y-4 p-4 overflow-hidden">
+        <div className="space-y-2">
+          <div className="text-sm md:text-md lg:text-lg font-elMessiri">
+            {privateCharter.title}
+          </div>
+          <h4 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+            Make a booking now!
+          </h4>
+        </div>
 
-      <h2 className="font-elMessiri text-2xl md:text-4xl 2xl:text-5xl font-bold mt-12 mb-6">
-        Get a Quote
-      </h2>
+        <ul className="space-y-3 mb-8">
+          {privateCharter.features.map((feature, idx) => (
+            <li key={idx} className="flex items-center">
+              <span className="mr-2">•</span>
+              {feature}
+            </li>
+          ))}
+        </ul>
 
-      {/* <div className="w-fit grid grid-cols-1 md:grid-cols-3 xl:md:grid-cols-4 gap-4 mb-6 text-lg"> */}
-      <ul className="space-y-3 mb-8">
-        {privateCharter.features.map((feature, idx) => (
-          <li key={idx} className="flex items-center">
-            <span className="mr-2">•</span>
-            {feature}
-          </li>
-        ))}
-      </ul>
-      {/* </div> */}
-
-      <div className="w-full flex-center">
         <Link href={privateCharter.href} target="_blank">
           <Button
             size="lg"
-            className="w-fit px-5 bg-white text-[#002663] hover:bg-gray-100 transition-colors font-elMessiri font-extrabold"
+            className="mt-5 w-fit px-5 text-white font-elMessiri font-extrabold rounded-3xl bg-gradient-to-tr from-[#001556] to-[#002FBC] to-100% hover:bg-[length:400%_400%] hover:animate-gradient hover:border-none transition-all ease-in-out duration-300"
           >
             Book Now
             <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
           </Button>
         </Link>
+      </div>
+
+      <div id="right" className="w-full h-full rounded-3xl overflow-hidden">
+        <Image
+          src={privateCharter.img}
+          alt={privateCharter.title}
+          width={800}
+          height={800}
+          objectFit="fill"
+          className="w-full h-full object-cover"
+        />
       </div>
     </motion.div>
   );
@@ -92,27 +109,38 @@ const BookingCard = ({ title, duration, features, href, index }) => {
   return (
     <motion.div
       variants={fadeIn("up", 0.1 * index + 1)}
-      className="group relative rounded-lg bg-opacity-20 bg-white/20 p-4 backdrop-blur-md border border-white/70 hover:bg-white/30 transition-all ease-in-out duration-300"
+      className="group relative flex-center flex-col gap-4 rounded-lg backdrop-blur-md shadow-[0_0_5px_rgba(0,0,0,0.5)] hover:shadow-[0_0_10px_rgba(0,0,0,0.5)] p-4 ease-in-out duration-300 overflow-hidden"
     >
-      <div className="absolute top-0 left-4 font-elMessiri font-semibold text-md md:text-lg 2xl:text-xl bg-white text-[#002663] rounded-b-md px-4 inline-block mb-6">
-        {title}
+      <div className="w-36 h-36 rounded-3xl overflow-hidden">
+        <Image
+          src="/assets/logo.png"
+          alt="PrivateCharter"
+          width={500}
+          height={500}
+          objectFit="fill"
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <h2 className="font-elMessiri text-2xl 2xl:text-4xl font-bold mt-12 mb-6">
-        Get a Quote
-      </h2>
+      <div className="space-y-2">
+        <h3 className="font-elMessiri text-2xl md:text-3xl lg:text-4xl font-bold">
+          {title}
+        </h3>
 
-      <ul className="space-y-3 mb-8">
-        {features.map((feature, idx) => (
-          <li key={idx} className="flex items-center">
-            <span className="mr-2">•</span>
-            {feature}
-          </li>
-        ))}
-      </ul>
-
+        <ul className="space-y-3">
+          {features.map((feature, idx) => (
+            <li key={idx} className="flex items-center">
+              <span className="mr-2">•</span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
       <Link href={href} target="_blank">
-        <Button className="w-full bg-white text-[#002663] hover:bg-gray-100 transition-colors font-elMessiri font-extrabold">
+        <Button
+          size="lg"
+          className="w-fit px-5 text-white font-elMessiri font-extrabold rounded-3xl bg-gradient-to-tr from-[#001556] to-[#002FBC] to-100% hover:bg-[length:400%_400%] hover:animate-gradient hover:border-none transition-all ease-in-out duration-300"
+        >
           Book Now
           <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
         </Button>
@@ -120,5 +148,3 @@ const BookingCard = ({ title, duration, features, href, index }) => {
     </motion.div>
   );
 };
-
-export default BookingInfo;

@@ -83,6 +83,7 @@ export const bookingOptions = [
 export const privateCharter = {
   title: "Private Charter",
   href: "https://wa.me/+918353936768",
+  img: "/assets/privateCharter.jpeg",
   duration: "Flexible duration",
   features: [
     "Exclusive privacy",
