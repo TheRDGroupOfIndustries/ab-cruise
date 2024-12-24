@@ -65,8 +65,9 @@ const Hero = () => {
             alt="PrivateCharter"
             width={1000}
             height={1000}
+            loading="eager"
             objectFit="fill"
-            className="w-full h-full object-fill"
+            className="w-full h-full object-center"
           />
         </BlurFade>
       </motion.section>
