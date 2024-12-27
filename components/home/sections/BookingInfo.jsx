@@ -13,7 +13,7 @@ const BookingInfo = () => {
     <>
       <section
         id="booking-info"
-        className="select-none relative p-4 md:px-6 lg:px-8 xl:px-10 lg:py-12 overflow-hidden"
+        className="select-none relative md:p-4 lg:px-8 xl:px-10 lg:py-12 overflow-hidden"
       >
         <motion.div
           variants={staggerContainer(0.2, 0.3)}
@@ -63,7 +63,7 @@ const PrivateCharter = () => {
     >
       <div id="left" className="w-full h-full space-y-4 p-4 overflow-hidden">
         <div className="space-y-2">
-          <div className="text-sm md:text-md lg:text-lg font-elMessiri">
+          <div className="text-xl md:text-2xl lg:text-3xl font-elMessiri">
             {privateCharter.title}
           </div>
           <h4 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
@@ -83,7 +83,7 @@ const PrivateCharter = () => {
         <Link href={privateCharter.href} target="_blank">
           <Button
             size="lg"
-            className="mt-5 w-fit px-5 text-white font-elMessiri font-extrabold rounded-3xl bg-gradient-to-tr from-[#001556] to-[#002FBC] to-100% hover:bg-[length:400%_400%] hover:animate-gradient hover:border-none transition-all ease-in-out duration-300"
+            className="mt-5 w-fit px-5 text-white font-extrabold rounded-3xl bg-gradient-to-tr from-[#001556] to-[#002FBC] to-100% hover:bg-[length:400%_400%] hover:animate-gradient hover:border-none transition-all ease-in-out duration-300"
           >
             Book Now
             <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
@@ -139,7 +139,7 @@ const BookingCard = ({ title, duration, features, href, index }) => {
       <Link href={href} target="_blank">
         <Button
           size="lg"
-          className="w-fit px-5 text-white font-elMessiri font-extrabold rounded-3xl bg-gradient-to-tr from-[#001556] to-[#002FBC] to-100% hover:bg-[length:400%_400%] hover:animate-gradient hover:border-none transition-all ease-in-out duration-300"
+          className="w-fit px-5 text-white font-extrabold rounded-3xl bg-gradient-to-tr from-[#001556] to-[#002FBC] to-100% hover:bg-[length:400%_400%] hover:animate-gradient hover:border-none transition-all ease-in-out duration-300"
         >
           Book Now
           <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />

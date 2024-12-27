@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         elMessiri: "var(--font-el)",
         dmSans: "var(--font-dm-sans)",
+        poppins: "var(--font-poppins)",
       },
       colors: {
         background: "hsl(var(--background))",
@@ -60,6 +61,17 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        shine: {
+          "0%": {
+            backgroundPosition: "200% 0",
+          },
+          "25%": {
+            backgroundPosition: "-200% 0",
+          },
+          "100%": {
+            backgroundPosition: "-200% 0",
+          },
+        },
         gradient: {
           "0%": {
             backgroundPosition: "0% 50%",
@@ -181,6 +193,7 @@ module.exports = {
         },
       },
       animation: {
+        shine: "shine 3s ease-out infinite",
         gradient: "gradient 3s ease infinite",
         "fade-in": "fadeIn 0.8s ease-in-out",
         "slide-down": "slideDown 0.8s ease-in-out",
