@@ -177,15 +177,16 @@ const Hero = () => {
             delay={0.8}
             inView
             xOffset={40}
-            className="absolute z-30 left-[28%] -bottom-20 w-5/6 h-[80%] sm:h-[60%] md:h-[80%] xl:h-[95%] 2xl:h-[90%]"
+            className="absolute z-30 left-[36%] -bottom-44 w-5/6 h-[80%] sm:h-[60%] md:h-[80%] xl:h-[95%] 2xl:h-[100%]"
           >
             <Image
-              src="/assets/boat_2.png"
+              src="/assets/my_boat.png"
               alt="AB Cruise Boat"
-              width={1200}
-              height={1200}
+              width={1280}
+              height={1280}
               priority
               className="w-full h-full object-contain"
+              style={{filter: "drop-shadow(30px 10px 6px #00000040)"}}
             />
           </BlurFade>
         </div>
