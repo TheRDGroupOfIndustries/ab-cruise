@@ -115,7 +115,7 @@ const Footer = () => {
                 </motion.div>
                 <motion.div variants={fadeIn("up", 0.6)}>
                   <Link
-                    href="mailto:support@abcruise.com"
+                    href="mailto:support@abcruisers.com"
                     target="_blank"
                     className="flex items-center gap-2"
                   >
