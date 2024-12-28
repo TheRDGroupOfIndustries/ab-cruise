@@ -177,7 +177,7 @@ const Hero = () => {
             delay={0.8}
             inView
             xOffset={40}
-            className="absolute z-30 left-[36%] bottom-0 sm:-bottom-44 w-5/6 h-[80%] sm:h-[60%] md:h-[80%] xl:h-[95%] 2xl:h-[100%]"
+            className="absolute z-30 left-[36%] -bottom-14 sm:-bottom-44 w-5/6 h-[80%] sm:h-[60%] md:h-[80%] xl:h-[95%] 2xl:h-[100%]"
           >
             <Image
               src="/assets/my_boat.png"
