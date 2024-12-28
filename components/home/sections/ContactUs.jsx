@@ -142,11 +142,11 @@ const ContactUs = () => {
                   <FaEnvelope className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Email us:</p>
                   <Link
-                    href="mailto:support@abcruise.com"
+                    href="mailto:support@abcruisers.com"
                     target="_blank"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
-                    <span className="hover-link">support@abcruise.com</span>
+                    <span className="hover-link">support@abcruisers.com</span>
                   </Link>
                 </motion.div>
               </div>
