@@ -63,10 +63,10 @@ const PrivateCharter = () => {
     >
       <div id="left" className="w-full h-full space-y-4 p-4 overflow-hidden">
         <div className="space-y-2">
-          <div className="text-xl md:text-2xl lg:text-3xl font-elMessiri">
+          <div className="text-xl md:text-2xl lg:text-4xl font-elMessiri font-bold">
             {privateCharter.title}
           </div>
-          <h4 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+          <h4 className="text-2xl md:text-3xl lg:text-4xl xl:text-3xl font-normal">
             Make a booking now!
           </h4>
         </div>
@@ -122,6 +122,7 @@ const BookingCard = ({ title, duration, features, href, index }) => {
         />
       </div>
 
+      <h1 className="text-xl text-blue-800">{duration}</h1>
       <div className="space-y-2">
         <h3 className="font-elMessiri text-2xl md:text-3xl lg:text-4xl font-bold">
           {title}

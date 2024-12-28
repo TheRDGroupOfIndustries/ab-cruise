@@ -7,7 +7,7 @@ export default function BlurFade({
   children,
   className,
   variant,
-  duration = 0.4,
+  duration = 1.1,
   delay = 0,
   yOffset = 10,
   inView = false,
@@ -20,8 +20,8 @@ export default function BlurFade({
   const isInView = !inView || inViewResult;
 
   const defaultVariants = {
-    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: -0, opacity: 1, filter: `blur(0px)` },
+    hidden: { x: yOffset, opacity: 0, filter: `blur(${blur})` },
+    visible: { x: -0, opacity: 1, filter: `blur(0px)` },
   };
 
   const combinedVariants = variant || defaultVariants;

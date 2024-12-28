@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="w-full h-full max-h-full relative flex flex-col items-start justify-start pt-8 2xl:pt-12">
             <div className="w-full">
               <WordPullUp
-                words="AB CRUISE"
+                words="AB Cruisers"
                 className="font-elMessiri text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-9xl 2xl:text-10xl font-black leading-tight tracking-wider"
               />
               <motion.p
@@ -62,7 +62,7 @@ const Hero = () => {
           >
             <Image
               src="/assets/boat.png"
-              alt="AB Cruise Boat"
+              alt="AB Cruisers Boat"
               width={1000}
               height={1000}
               priority

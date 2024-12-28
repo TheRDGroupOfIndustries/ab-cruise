@@ -32,8 +32,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "AB Cruise",
-  description: "AB Cruise",
+  title: "AB Cruisers",
+  description: "AB Cruisers",
 };
 
 export default function RootLayout({ children }) {

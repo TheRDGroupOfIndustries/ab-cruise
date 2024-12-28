@@ -3,9 +3,9 @@ import { FaShip, FaUserShield, FaEye, FaUsers } from "react-icons/fa";
 export const aboutUsData = {
   title: "ABOUT US",
   description:
-    "At AB Cruise, we redefine luxury and elegance on the waters of the Ganges. Established with a vision to offer unmatched hospitality and exclusive experiences, we pride ourselves on being the first choice for private yacht services in Varanasi. Our passion for excellence is reflected in every detail, from the impeccable design of our yachts to the personalized services we provide.",
+    "At AB Cruisers, we redefine luxury and elegance on the waters of the Ganges. Established with a vision to offer unmatched hospitality and exclusive experiences, we pride ourselves on being the first choice for private yacht services in Varanasi. Our passion for excellence is reflected in every detail, from the impeccable design of our yachts to the personalized services we provide.",
   subDescription:
-    "We are more than a yacht provider—we are curators of moments, ensuring that your journey with us is memorable, safe, and infused with the charm of Varanasi’s timeless beauty. Whether you seek tranquility, celebration, or adventure, AB Cruise is dedicated to making your time on the Ganges truly extraordinary.",
+    "We are more than a yacht provider—we are curators of moments, ensuring that your journey with us is memorable, safe, and infused with the charm of Varanasi’s timeless beauty. Whether you seek tranquility, celebration, or adventure, AB Cruisers is dedicated to making your time on the Ganges truly extraordinary.",
   services: [
     {
       icon: <FaShip className="text-4xl mx-auto" />,
@@ -48,40 +48,40 @@ export const bookingOptions = [
   {
     title: "Sunrise cruise",
     href: "https://wa.me/+918353936768",
-    duration: "20 min ride",
+    duration: "08:00 AM",
     features: [
       "Perfect for photographers",
       "Scenic morning views",
       "Best time for wildlife",
-      "Refreshments provided",
+      "Paid Refreshments provided",
     ],
   },
   {
     title: "Noon cruise",
     href: "https://wa.me/+918353936768",
-    duration: "40 min ride",
+    duration: "12:00 PM",
     features: [
       "Family-friendly atmosphere",
       "Marine life spotting",
       "Guided tour included",
-      "Refreshments provided",
+      "Paid Refreshments provided",
     ],
   },
   {
     title: "Evening cruise",
     href: "https://wa.me/+918353936768",
-    duration: "60 min ride",
+    duration: "05:30 PM",
     features: [
       "Exclusive boat access",
       "Catering available",
       "Perfect for events",
-      "Refreshments provided",
+      "Paid Refreshments provided",
     ],
   },
 ];
 
 export const privateCharter = {
-  title: "Private Charter",
+  title: "Private Chartered",
   href: "https://wa.me/+918353936768",
   img: "/assets/privateCharter.jpeg",
   duration: "Flexible duration",
@@ -91,7 +91,7 @@ export const privateCharter = {
     "Personalized decor for events",
     "Customized itinerary",
     "Lavish cushioned seating",
-    "Refreshments provided",
+    "Paid Refreshments provided",
     "Safety gear provided",
   ],
   highlight:

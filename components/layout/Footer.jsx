@@ -36,12 +36,12 @@ const Footer = () => {
                   href="/"
                   className="w-fit hover-link font-elMessiri font-bold"
                 >
-                  AB Cruise
+                  AB Cruisers
                 </Link>
               </h2>
               <p className="text-sm italic text-justify text-balance mb-4">
                 Experience the timeless charm of Varanasi with{" "}
-                <strong>AB Cruise</strong>, where luxury meets tradition on the
+                <strong>AB Cruisers</strong>, where luxury meets tradition on the
                 serene waters of the Ganges. From private celebrations to
                 tranquil getaways, we create unforgettable memories with
                 impeccable service and unmatched elegance. Sail with us and
@@ -120,7 +120,7 @@ const Footer = () => {
                     className="flex items-center gap-2"
                   >
                     <FaEnvelope className="w-4 h-4" />
-                    <span className="hover-link">support@abcruise.com</span>
+                    <span className="hover-link">support@abcruisers.com</span>
                   </Link>
                 </motion.div>
                 <motion.div variants={fadeIn("up", 0.7)}>
@@ -144,6 +144,7 @@ const Footer = () => {
             className="text-center mt-6 pt-6 border-t border-gray-600"
             variants={fadeIn("up", 0.8)}
           >
+            Disclaimer : Ride schedule is subject to availability. Prior arrangements will be provided for hassle-free ride. <br />
             <Link href="/" className="w-fit hover-link">
               &copy; {new Date().getFullYear()} All rights are reserved by AB
               Cruise

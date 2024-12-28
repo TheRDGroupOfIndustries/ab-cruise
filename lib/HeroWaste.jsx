@@ -38,7 +38,7 @@ const Hero = () => {
               className="text-[10px] md:text-sm italic text-justif text-balance mb-2"
             >
               Discover the timeless charm of Varanasi with{" "}
-              <strong>AB Cruise</strong>, blending luxury and tradition on the
+              <strong>AB Cruisers</strong>, blending luxury and tradition on the
               serene Ganges. From private celebrations to tranquil getaways, we
               offer unmatched elegance and unforgettable memories.
             </motion.p>
