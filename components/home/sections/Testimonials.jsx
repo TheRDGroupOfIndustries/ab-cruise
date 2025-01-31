@@ -4,26 +4,25 @@ import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
-import { testimonials } from "@/constant/data";
 import { Button } from "@/components/ui/button";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import BlurFade from "@/components/ui/blur-fade";
 
-const Testimonials = () => {
+const Testimonials = ({ testimonialsData }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
   const handlePrev = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
+      prev === 0 ? testimonialsData?.testimonials.length - 1 : prev - 1
     );
   };
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
+      prev === testimonialsData?.testimonials.length - 1 ? 0 : prev + 1
     );
-  }, []);
+  }, [testimonialsData]);
 
   const handleDragEnd = (event, info) => {
     if (Math.abs(info.offset.x) > 100) {
@@ -48,7 +47,7 @@ const Testimonials = () => {
   return (
     <motion.section
       id="testimonials"
-      className="select-none container mx-auto px-4 py-16"
+      className="select-text container mx-auto px-4 py-16"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       variants={staggerContainer(0.2, 0.1)}
@@ -60,7 +59,8 @@ const Testimonials = () => {
         className="font-elMessiri text-5xl 2xl:text-7xl font-bold text-[#002663]"
         variants={fadeIn("up", 0.2)}
       >
-        What our <span className="text-blue-600">customers</span> says
+        {testimonialsData?.title}
+        {/* What our <span className="text-blue-600">customers</span> says */}
       </motion.h2>
 
       <motion.div
@@ -83,11 +83,13 @@ const Testimonials = () => {
             }}
             className="flex gap-6 py-2"
           >
-            {testimonials.concat(testimonials).map((testimonial, index) => (
-              <BlurFade key={index} delay={0.08} inView>
-                <TestimonialCard {...testimonial} />
-              </BlurFade>
-            ))}
+            {testimonialsData?.testimonials
+              .concat(testimonialsData?.testimonials)
+              .map((testimonial, index) => (
+                <BlurFade key={index} delay={0.08} inView>
+                  <TestimonialCard {...testimonial} />
+                </BlurFade>
+              ))}
           </motion.div>
         </motion.div>
       </motion.div>

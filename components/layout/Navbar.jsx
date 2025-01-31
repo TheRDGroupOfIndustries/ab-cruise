@@ -42,7 +42,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="select-none fixed top-0 left-0 right-0 z-50 w-full h-16 lg:h-20 animate-slide-down overflow-hidden">
+    <nav className="select-none fixed top-0 left-0 right-0 z-[101] w-full h-16 lg:h-20 animate-slide-down overflow-hidden">
       {/* Background SVG */}
       <div className="hidden lg:block absolute inset-0 w-full h-4 bg-white rounded-b-full"></div>
       <div className="absolute top-[0.967rem] left-0 w-full flex justify-center">
@@ -66,20 +66,19 @@ const Navbar = () => {
         >
           {links.map((link, index) => {
             const isActive =
-              activeSection === "hero"
-                ? link.href === "/"
-                : link.href === "/#" + activeSection;
+              activeSection === "hero" ?
+                link.href === "/"
+              : link.href === "/#" + activeSection;
 
             return (
               <motion.div key={index} variants={fadeIn("up", index * 0.1)}>
                 <Link
                   href={link.href}
                   className={`text-sm lg:text-xl capitalize ${
-                    link.label !== "AB"
-                      ? isActive
-                        ? "text-[#0060FA] underline underline-offset-8"
-                        : "hover-link-underline text-gray-800 hover:text-[#0060FA]"
-                      : "rounded-full px-2 py-1.5 flex-center bg-gradient-to-br from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg lg:text-2xl font-elMessiri font-semibold"
+                    link.label !== "AB" ?
+                      isActive ? "text-[#0060FA] underline underline-offset-8"
+                      : "hover-link-underline text-gray-800 hover:text-[#0060FA]"
+                    : "rounded-full px-2 py-1.5 flex-center bg-gradient-to-br from-[#0E5AD6] via-[#002663] to-[#0060FA] text-white text-lg lg:text-2xl font-elMessiri font-semibold"
                   } ease-in-out duration-300`}
                 >
                   {link.label}
@@ -108,18 +107,18 @@ const Navbar = () => {
             <div className="flex flex-col space-y-6">
               {links.map((link, index) => {
                 const isActive =
-                  activeSection === "hero"
-                    ? link.href === "/"
-                    : link.href === "/#" + activeSection;
+                  activeSection === "hero" ?
+                    link.href === "/"
+                  : link.href === "/#" + activeSection;
 
                 return (
                   link.label !== "AB" && (
                     <Link key={index} href={link.href} className="w-fit">
                       <SheetClose
                         className={`text-2xl capitalize ${
-                          isActive
-                            ? "text-[#0060FA] underline underline-offset-8"
-                            : "text-white hover:text-[#0060FA]"
+                          isActive ?
+                            "text-[#0060FA] underline underline-offset-8"
+                          : "text-white hover:text-[#0060FA]"
                         } ease-in-out duration-300`}
                       >
                         {link.label}

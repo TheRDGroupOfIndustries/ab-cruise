@@ -146,39 +146,4 @@ export const testimonials = [
     testimonial:
       "Having lived here for years, I've tried many boat tours. This one stands out for their attention to detail and knowledge of local marine life and history.",
   },
-  {
-    name: "Rajiv Kumar",
-    pfp: "/assets/user.png",
-    role: "Adventure Seeker",
-    testimonial:
-      "The noon cruise was perfect for spotting wildlife. We saw dolphins and various sea birds. The crew's knowledge about marine life made it educational and fun.",
-  },
-  {
-    name: "Sneha Verma",
-    pfp: "/assets/user.png",
-    role: "Honeymoon Couple",
-    testimonial:
-      "My husband and I chose the sunset cruise for our honeymoon. The romantic atmosphere and stunning views created memories we'll cherish forever.",
-  },
-  {
-    name: "Amit Desai",
-    pfp: "/assets/user.png",
-    role: "Marine Biology Student",
-    testimonial:
-      "The ecological information provided during the tour was fascinating. It's great to see a company that cares about marine conservation while providing entertainment.",
-  },
-  {
-    name: "Pooja Nair",
-    pfp: "/assets/user.png",
-    role: "Event Planner",
-    testimonial:
-      "Organized a birthday celebration on the private charter. The staff went above and beyond to make it special. The setup and service were absolutely perfect.",
-  },
-  {
-    name: "Manoj Gupta",
-    pfp: "/assets/user.png",
-    role: "Retired Teacher",
-    testimonial:
-      "The accessibility and comfort of the boat impressed me. Even as a senior citizen, I felt safe and comfortable throughout the journey. A wonderful experience!",
-  },
 ];

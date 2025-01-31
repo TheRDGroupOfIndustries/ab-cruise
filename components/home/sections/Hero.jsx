@@ -8,14 +8,14 @@ import { Button } from "@/components/ui/button";
 import WordPullUp from "@/components/ui/word-pull-up";
 // import BlurFade from "@/components/ui/blur-fade";
 
-const Hero = () => {
+const Hero = ({ heroData }) => {
   const router = useRouter();
-  const handleBook = () => router.push("/#booking-info");
+  const handleBook = (link) => router.push(link || "/#booking-info");
 
   return (
     <section
       id="hero"
-      className="select-none relative w-full h-[55vh] md:h-[70vh] lg:h-screen p-4 overflow-hidden"
+      className="select-text relative w-full h-[55vh] md:h-[70vh] lg:h-screen p-4 overflow-hidden"
     >
       <motion.div
         variants={staggerContainer(0.2, 0.3)}
@@ -28,11 +28,16 @@ const Hero = () => {
         // }}
       >
         {/* <div class="waves z-10"></div> */}
-        <div class="absolute inset-0 bg-[url(/assets/hero.jpg)] bg-cover bg-no-repeat backdrop-filter backdrop-blur-xl z-[11] opacity-50 overflow-hidden"></div>
+        <div
+          style={{
+            backgroundImage: `url(${heroData?.heroImageURL || "/assets/hero.jpg"})`,
+          }}
+          className="absolute inset-0 bg-cover bg-no-repeat backdrop-filter backdrop-blur-xl z-[11] opacity-50 overflow-hidden"
+        ></div>
 
         <div className="w-full h-full p-4 relative z-20">
           <WordPullUp
-            words="AB Cruisers"
+            words={heroData?.title || "AB Cruisers"}
             className="font-elMessiri text-white text-4xl md:text-4xl xl:text-5xl font-black"
           />
           {/* <WordPullUp
@@ -45,25 +50,28 @@ const Hero = () => {
                 variants={fadeIn("up", 0.5)}
                 className="font-dmSans text-white text-md md:text-3xl lg:text-4xl 2xl:text-5xl text-center font-light leading-snug overflow-hidden"
               >
-                Experience comfort and luxury on the trails of Ganges!
+                {heroData?.heading ||
+                  "Experience comfort and luxury on the trails of Ganges!"}
               </motion.p>
               <motion.p
                 variants={fadeIn("up", 0.7)}
                 className="max-w-2xl text-[10px] md:text-sm italic text-center text-balanc mb-2 overflow-hidden"
-              >
-                Discover the timeless charm of Varanasi with{" "}
-                <strong>AB Cruise</strong>, blending luxury and tradition on the
-                serene Ganges. From private celebrations to tranquil getaways,
-                we offer unmatched elegance and unforgettable memories.
-              </motion.p>
+                dangerouslySetInnerHTML={{
+                  __html:
+                    heroData?.subheading?.replace(
+                      /AB Cruise/g,
+                      "<strong>AB Cruise</strong>"
+                    ) || "",
+                }}
+              />
               <motion.div variants={fadeIn("up", 0.9)} className="">
                 <Button
-                  onClick={handleBook}
+                  onClick={() => handleBook(heroData?.button?.link)}
                   size="lg"
                   effect="shine"
                   className="relative z-40 md:h-12 2xl:scale-125 2xl:mr-10 px-6 sm:px-8 md:px-10 border border-white text-white font-semibold bg-[#ffffff30] backdrop-blur-xl rounded-full text-base sm:text-xl md:text-2xl hover:border-none hover:bg-[#ffffff20] transition-all ease-in-out duration-300"
                 >
-                  Book now
+                  {heroData?.button?.text || "Book now"}
                 </Button>
               </motion.div>
             </div>

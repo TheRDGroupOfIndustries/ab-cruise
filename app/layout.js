@@ -1,8 +1,8 @@
 // import localFont from "next/font/local";
+import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import { El_Messiri, DM_Sans, Poppins } from "next/font/google";
-import Head from 'next/head';
-
+import Head from "next/head";
 
 const elMessiri = El_Messiri({
   weight: ["400", "500", "600", "700"],
@@ -24,29 +24,28 @@ const poppins = Poppins({
 
 export const metadata = {
   keywords:
-    'AB Cruises Varanasi, luxury yacht services Varanasi, yacht rental in Varanasi, private yacht Varanasi, Ganga river cruise Varanasi, best yacht service in Varanasi, boat rental Varanasi, Varanasi cruise experience, Ganga yacht tours, premium yacht services Varanasi, sunset yacht cruise Varanasi, Ganga aarti yacht experience, romantic yacht ride Varanasi, luxury river tours Varanasi, private boat ride on Ganga, Varanasi river sightseeing, yacht booking for Ganga aarti, luxury boat ride Ganga Varanasi, best river cruise in Varanasi, yacht party Varanasi, birthday yacht rental Varanasi, wedding yacht services Varanasi, corporate yacht bookings Varanasi, affordable luxury yacht rental in Varanasi, book a private yacht for Ganga aarti, best sunset yacht cruise on the Ganga, experience luxury on the Ganga river with AB Cruises, top-rated yacht services in Varanasi, luxury yacht near Dashashwamedh Ghat, Varanasi yacht tours with AB Cruises, AB Cruises Ganga aarti packages',
+    "AB Cruises Varanasi, luxury yacht services Varanasi, yacht rental in Varanasi, private yacht Varanasi, Ganga river cruise Varanasi, best yacht service in Varanasi, boat rental Varanasi, Varanasi cruise experience, Ganga yacht tours, premium yacht services Varanasi, sunset yacht cruise Varanasi, Ganga aarti yacht experience, romantic yacht ride Varanasi, luxury river tours Varanasi, private boat ride on Ganga, Varanasi river sightseeing, yacht booking for Ganga aarti, luxury boat ride Ganga Varanasi, best river cruise in Varanasi, yacht party Varanasi, birthday yacht rental Varanasi, wedding yacht services Varanasi, corporate yacht bookings Varanasi, affordable luxury yacht rental in Varanasi, book a private yacht for Ganga aarti, best sunset yacht cruise on the Ganga, experience luxury on the Ganga river with AB Cruises, top-rated yacht services in Varanasi, luxury yacht near Dashashwamedh Ghat, Varanasi yacht tours with AB Cruises, AB Cruises Ganga aarti packages",
   description:
-    'AB Cruises offers luxury yacht services in Varanasi. Experience private yacht rides, Ganga aarti cruises, and premium river tours with unmatched hospitality. Book now for a unique Ganga river adventure!',
-  title: 'AB Cruises | Luxury Yacht Booking in Varanasi',
-  author: 'AB Cruisers',
-  robots: 'index, follow',
-  viewport: 'width=device-width, initial-scale=1.0',
+    "AB Cruises offers luxury yacht services in Varanasi. Experience private yacht rides, Ganga aarti cruises, and premium river tours with unmatched hospitality. Book now for a unique Ganga river adventure!",
+  title: "AB Cruises | Luxury Yacht Booking in Varanasi",
+  author: "AB Cruisers",
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1.0",
   openGraph: {
-    type: 'website',
-    title: 'AB Cruisers | Luxury Yacht Booking in Varanasi',
+    type: "website",
+    title: "AB Cruisers | Luxury Yacht Booking in Varanasi",
     description:
-      'Book luxury yachts effortlessly for your next adventure. Explore our wide range of yachts and enjoy premium services at competitive prices.',
-    url: 'https://www.abcruisers.com',
+      "Book luxury yachts effortlessly for your next adventure. Explore our wide range of yachts and enjoy premium services at competitive prices.",
+    url: "https://www.abcruisers.com",
   },
 };
-
 
 const Meta = () => (
   <Head>
     <title>AB Cruisers | Luxury Yacht Booking in Varanasi</title>
     <meta
-        name="keywords"
-        content="
+      name="keywords"
+      content="
           AB Cruises Varanasi, Luxury yacht services Varanasi, Yacht rental in Varanasi, 
           Private yacht Varanasi, Ganga river cruise Varanasi, Best yacht service in Varanasi, 
           Boat rental Varanasi, Varanasi cruise experience, Ganga yacht tours, 
@@ -60,11 +59,11 @@ const Meta = () => (
           Top-rated yacht services in Varanasi, Luxury yacht near Dashashwamedh Ghat, 
           Varanasi yacht tours with AB Cruises, AB Cruises Ganga aarti packages
         "
-      />
-      <meta
-        name="description"
-        content="AB Cruises offers luxury yacht services in Varanasi. Experience private yacht rides, Ganga aarti cruises, and premium river tours with unmatched hospitality. Book now for a unique Ganga river adventure!"
-      />
+    />
+    <meta
+      name="description"
+      content="AB Cruises offers luxury yacht services in Varanasi. Experience private yacht rides, Ganga aarti cruises, and premium river tours with unmatched hospitality. Book now for a unique Ganga river adventure!"
+    />
     <meta name="author" content="AB Cruises" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
@@ -73,7 +72,10 @@ const Meta = () => (
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="AB Cruisers | Explore the Varanasi in Ganga" />
+    <meta
+      property="og:title"
+      content="AB Cruisers | Explore the Varanasi in Ganga"
+    />
     <meta
       property="og:description"
       content="Book luxury yachts effortlessly for your next adventure. Explore our wide range of yachts and enjoy premium services at competitive prices."
@@ -83,7 +85,6 @@ const Meta = () => (
   </Head>
 );
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -91,6 +92,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${dmSans.className} ${poppins.className} ${elMessiri.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

@@ -4,16 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
-import { bookingOptions, privateCharter } from "@/constant/data";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const BookingInfo = () => {
+const BookingInfo = ({ bookingInfoData }) => {
   return (
     <>
       <section
         id="booking-info"
-        className="select-none relative md:p-4 lg:px-8 xl:px-10 lg:py-12 overflow-hidden"
+        className="select-text relative md:p-4 lg:px-8 xl:px-10 lg:py-12 overflow-hidden"
       >
         <motion.div
           variants={staggerContainer(0.2, 0.3)}
@@ -26,24 +25,30 @@ const BookingInfo = () => {
             variants={fadeIn("down", 0.3)}
             className="font-elMessiri text-[#002663] text-5xl 2xl:text-7xl font-bold mb-6"
           >
-            Booking Information
+            {bookingInfoData?.title || "Booking Information"}
           </motion.h2>
 
-          <PrivateCharter />
+          <PrivateCharter
+            privateCharterData={bookingInfoData?.privateCharteredInfo}
+          />
 
           <motion.p
             variants={fadeIn("down", 0.5)}
             className="w-full font-elMessiri font-semibold text-[#002663] text-center text-2xl md:text-3xl lg:text-4xl mt-4 mb-6"
-          >
-            You can book our boat on{" "}
-            <span className="text-blue-600">lowest</span> price!
-          </motion.p>
+            dangerouslySetInnerHTML={{
+              __html:
+                bookingInfoData?.OtherBookingOptionsHeadline?.replace(
+                  /lowest/g,
+                  "<span className='text-blue-600'>lowest</span>"
+                ) || "",
+            }}
+          />
 
           <motion.div
             variants={fadeIn("up", 0.7)}
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            {bookingOptions.map((option, index) => (
+            {bookingInfoData?.bookingOptions.map((option, index) => (
               <BookingCard key={index} {...option} index={index} />
             ))}
           </motion.div>
@@ -55,7 +60,8 @@ const BookingInfo = () => {
 
 export default BookingInfo;
 
-const PrivateCharter = () => {
+const PrivateCharter = ({ privateCharterData }) => {
+  const { title, features, img, href } = privateCharterData;
   return (
     <motion.div
       variants={fadeIn("up", 0.5)}
@@ -64,7 +70,7 @@ const PrivateCharter = () => {
       <div id="left" className="w-full h-full space-y-4 p-4 overflow-hidden">
         <div className="space-y-2">
           <div className="text-xl md:text-2xl lg:text-4xl font-elMessiri font-bold">
-            {privateCharter.title}
+            {title}
           </div>
           <h4 className="text-2xl md:text-3xl lg:text-4xl xl:text-3xl font-normal">
             Make a booking now!
@@ -72,7 +78,7 @@ const PrivateCharter = () => {
         </div>
 
         <ul className="space-y-3 mb-8">
-          {privateCharter.features.map((feature, idx) => (
+          {features.map((feature, idx) => (
             <li key={idx} className="flex items-center">
               <span className="mr-2">•</span>
               {feature}
@@ -80,7 +86,7 @@ const PrivateCharter = () => {
           ))}
         </ul>
 
-        <Link href={privateCharter.href} target="_blank">
+        <Link href={href} target="_blank">
           <Button
             size="lg"
             className="mt-5 w-fit px-5 text-white font-extrabold rounded-3xl bg-gradient-to-tr from-[#001556] to-[#002FBC] to-100% hover:bg-[length:400%_400%] hover:animate-gradient hover:border-none transition-all ease-in-out duration-300"
@@ -93,8 +99,8 @@ const PrivateCharter = () => {
 
       <div id="right" className="w-full h-full rounded-3xl overflow-hidden">
         <Image
-          src={privateCharter.img}
-          alt={privateCharter.title}
+          src={img?.imageUrl || "/assets/logo.png"}
+          alt={img?.imageAlt || "PrivateCharter"}
           width={800}
           height={800}
           objectFit="fill"
@@ -105,7 +111,15 @@ const PrivateCharter = () => {
   );
 };
 
-const BookingCard = ({ title, duration, features, href, index }) => {
+const BookingCard = ({
+  imageUrl,
+  imageAlt,
+  title,
+  duration,
+  features,
+  href,
+  index,
+}) => {
   return (
     <motion.div
       variants={fadeIn("up", 0.1 * index + 1)}
@@ -113,8 +127,8 @@ const BookingCard = ({ title, duration, features, href, index }) => {
     >
       <div className="w-36 h-36 rounded-3xl overflow-hidden">
         <Image
-          src="/assets/logo.png"
-          alt="PrivateCharter"
+          src={imageUrl || "/assets/logo.png"}
+          alt={imageAlt || "PrivateCharter"}
           width={500}
           height={500}
           objectFit="fill"
