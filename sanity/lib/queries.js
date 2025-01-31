@@ -64,9 +64,9 @@ export const categoriesQuery = groq`*[_type == "category"] {
 export const navbarLinksQuery = groq`*[_type == "navbarLinks"][0] {
   heading,
   links[] {
-    text,
-    link,
-    "slug": slug.current
+    label,
+    href,
+    slug
   }
 }`;
 
@@ -134,5 +134,25 @@ export const bookingInfoQuery = groq`*[_type == "bookingInfo"][0] {
     href,
     duration,
     features
+  }
+}`;
+
+export const contactUsQuery = groq`*[_type == "contactUs"][0] {
+  title,
+  contactInfo {
+    heading,
+    subheading,
+    phone {
+      number,
+      link
+    },
+    email {
+      emailAddress,
+      link
+    },
+    address {
+      fullAddress,
+      iframe
+    }
   }
 }`;

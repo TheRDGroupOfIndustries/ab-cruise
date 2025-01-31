@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { fadeIn, staggerContainer } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { links } from "@/constant/data";
+// import { links } from "@/constant/data";
 import {
   Sheet,
   SheetTrigger,
@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({ navData }) => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const Navbar = () => {
           initial="hidden"
           animate="show"
         >
-          {links.map((link, index) => {
+          {navData?.links.map((link, index) => {
             const isActive =
               activeSection === "hero" ?
                 link.href === "/"
@@ -105,7 +105,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex flex-col space-y-6">
-              {links.map((link, index) => {
+              {navData?.links.map((link, index) => {
                 const isActive =
                   activeSection === "hero" ?
                     link.href === "/"

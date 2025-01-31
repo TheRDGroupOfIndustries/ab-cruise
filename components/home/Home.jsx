@@ -5,6 +5,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import {
   aboutUsQuery,
   bookingInfoQuery,
+  contactUsQuery,
   galleryQuery,
   heroQuery,
   testimonialQuery,
@@ -37,17 +38,19 @@ export default async function Home() {
     galleryData,
     testimonialsData,
     bookingInfoData,
+    contactUsData,
   ] = await Promise.all([
     fetchSectionData(heroQuery, "hero"),
     fetchSectionData(aboutUsQuery, "aboutUs"),
     fetchSectionData(galleryQuery, "gallery"),
     fetchSectionData(testimonialQuery, "testimonials"),
     fetchSectionData(bookingInfoQuery, "bookingInfo"),
+    fetchSectionData(contactUsQuery, "contactUs"),
   ]);
 
   if (!heroData) return <Loader />;
 
-  console.log("bd", bookingInfoData);
+  console.log("bd", contactUsData);
 
   return (
     <>
@@ -66,7 +69,9 @@ export default async function Home() {
       <SectionWrapper>
         <BookingInfo bookingInfoData={bookingInfoData} />
       </SectionWrapper>
-      <ContactUs />
+      <SectionWrapper>
+        <ContactUs contactUsData={contactUsData} />
+      </SectionWrapper>
     </>
   );
 }

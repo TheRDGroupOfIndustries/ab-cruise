@@ -39,7 +39,7 @@ const BookingInfo = ({ bookingInfoData }) => {
               __html:
                 bookingInfoData?.OtherBookingOptionsHeadline?.replace(
                   /lowest/g,
-                  "<span className='text-blue-600'>lowest</span>"
+                  '<span style="color: #2563eb">lowest</span>'
                 ) || "",
             }}
           />

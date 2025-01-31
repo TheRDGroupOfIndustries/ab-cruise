@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
-import { links } from "@/constant/data";
 import { ArrowRight } from "lucide-react";
 import {
   FaPhone,
@@ -14,7 +14,10 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ navData }) => {
+  const pathname = usePathname();
+
+  if (pathname.includes("/studio")) return null;
   return (
     <motion.footer
       className="select-none w-full text-white p-4 overflow-hidden"
@@ -41,8 +44,8 @@ const Footer = () => {
               </h2>
               <p className="text-sm italic text-justify text-balance mb-4">
                 Experience the timeless charm of Varanasi with{" "}
-                <strong>AB Cruisers</strong>, where luxury meets tradition on the
-                serene waters of the Ganges. From private celebrations to
+                <strong>AB Cruisers</strong>, where luxury meets tradition on
+                the serene waters of the Ganges. From private celebrations to
                 tranquil getaways, we create unforgettable memories with
                 impeccable service and unmatched elegance. Sail with us and
                 redefine your journey.
@@ -76,7 +79,7 @@ const Footer = () => {
             <motion.div variants={fadeIn("up", 0.4)}>
               <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
               <ul className="space-y-2">
-                {links.map(
+                {navData?.links.map(
                   (link, index) =>
                     link.label !== "AB" && (
                       <motion.li
@@ -88,7 +91,7 @@ const Footer = () => {
                           target="_blank"
                           className="w-fit flex items-center group"
                         >
-                          <span className="capitalize font-bold hover-link">
+                          <span className="capitalize font-bold group-hover-link-underline">
                             {link.label}
                           </span>
                           <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
@@ -107,30 +110,32 @@ const Footer = () => {
                   <Link
                     href="tel:+918353936768"
                     target="_blank"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 group"
                   >
                     <FaPhone className="w-4 h-4" />
-                    <span className="hover-link">+91 8353936768</span>
+                    <span className="group-hover-link">+91 8353936768</span>
                   </Link>
                 </motion.div>
                 <motion.div variants={fadeIn("up", 0.6)}>
                   <Link
                     href="mailto:support@abcruisers.com"
                     target="_blank"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 group"
                   >
                     <FaEnvelope className="w-4 h-4" />
-                    <span className="hover-link">support@abcruisers.com</span>
+                    <span className="group-hover-link">
+                      support@abcruisers.com
+                    </span>
                   </Link>
                 </motion.div>
                 <motion.div variants={fadeIn("up", 0.7)}>
                   <Link
                     href="https://maps.app.goo.gl/h4aJfGBaoJuBqqB66"
                     target="_blank"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 group"
                   >
                     <FaMapMarkerAlt className="w-4 h-4" />
-                    <span className="hover-link">
+                    <span className="group-hover-link">
                       Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar
                       Pradesh, India.
                     </span>
@@ -144,8 +149,12 @@ const Footer = () => {
             className="text-center mt-6 pt-6 border-t border-gray-600"
             variants={fadeIn("up", 0.8)}
           >
-            Disclaimer : Ride schedule is subject to availability. Prior arrangements will be provided for hassle-free ride. <br />
-            <Link href="/" className="w-fit hover-link">
+            <span className="text-base text-gray-300 text-balance">
+              Disclaimer : Ride schedule is subject to availability. Prior
+              arrangements will be provided for hassle-free ride.
+            </span>
+            <br />
+            <Link href="/" className="w-fit hover-link mt-4">
               &copy; {new Date().getFullYear()} All rights are reserved by AB
               Cruise
             </Link>

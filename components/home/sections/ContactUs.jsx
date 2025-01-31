@@ -7,7 +7,7 @@ import { fadeIn, staggerContainer } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 
-const ContactUs = () => {
+const ContactUs = ({ contactUsData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted");
@@ -26,7 +26,7 @@ const ContactUs = () => {
         className="font-elMessiri text-5xl 2xl:text-7xl font-bold text-[#002663] mb-4"
         variants={fadeIn("up", 0.2)}
       >
-        Contact us
+        {contactUsData?.title || "Contact us"}
       </motion.h2>
 
       <motion.div
@@ -97,20 +97,21 @@ const ContactUs = () => {
 
           {/* Right Contact Options */}
           <motion.div
-            className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-black"
+            className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-black overflow-hidden"
             variants={fadeIn("left", 0.6)}
           >
             <motion.h2
               className="text-4xl text-gray-950 mb-2"
               variants={fadeIn("up", 0.7)}
             >
-              Need Quick Response?
+              {contactUsData?.contactInfo?.heading || "Need Quick Response?"}
             </motion.h2>
             <motion.p
               className="text-gray-800 mb-6"
               variants={fadeIn("up", 0.8)}
             >
-              Feel free to contact us on Phone
+              {contactUsData?.contactInfo?.subheading ||
+                "Feel free to contact us on Phone, Email or visit us at our office."}
             </motion.p>
 
             <motion.div
@@ -120,33 +121,48 @@ const ContactUs = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Phone */}
                 <motion.div
-                  className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
+                  className="bg-white/80 backdrop-blur-md group rounded-3xl p-4 text-center hover:shadow-lg hover:-translate-y-2 transition-all ease-in-out duration-300"
                   variants={fadeIn("up", 0.5)}
                 >
                   <FaPhone className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Call us:</p>
                   <Link
-                    href="https://wa.me/+918353936768"
+                    href={
+                      ((
+                        contactUsData?.contactInfo?.phone?.link?.includes(
+                          "https://wa.me/"
+                        )
+                      ) ?
+                        contactUsData?.contactInfo?.phone?.link
+                      : `tel:${contactUsData?.contactInfo?.phone?.link}`) ||
+                      "https://wa.me/+918353936768"
+                    }
                     target="_blank"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
-                    <span className="hover-link">+91 8353936768</span>
+                    <span className="group-hover-link">
+                      {contactUsData?.contactInfo?.phone?.number ||
+                        "+91 8353936768"}
+                    </span>
                   </Link>
                 </motion.div>
 
                 {/* Email */}
                 <motion.div
-                  className="bg-white/80 backdrop-blur-md rounded-3xl p-4 text-center hover:shadow-lg transition-all ease-in-out duration-300"
+                  className="bg-white/80 backdrop-blur-md group rounded-3xl p-4 text-center hover:shadow-lg hover:-translate-y-2 transition-all ease-in-out duration-300"
                   variants={fadeIn("up", 0.8)}
                 >
                   <FaEnvelope className="text-[#002663] text-4xl mx-auto" />
                   <p className="text-gray-800 mt-4">Email us:</p>
                   <Link
-                    href="mailto:support@abcruisers.com"
+                    href={`mailto:${contactUsData?.contactInfo?.email?.link || "support@abcruisers.com"}`}
                     target="_blank"
                     className="hover:text-[#002663] transition-colors block mt-1"
                   >
-                    <span className="hover-link">support@abcruisers.com</span>
+                    <span className="group-hover-link">
+                      {contactUsData?.contactInfo?.email?.emailAddress ||
+                        "support@abcruisers.com"}
+                    </span>
                   </Link>
                 </motion.div>
               </div>
@@ -155,11 +171,21 @@ const ContactUs = () => {
             {/* Map */}
             <motion.div
               variants={fadeIn("up", 1.1)}
-              className="w-full relative bg-white/80 backdrop-blur-md rounded-3xl mt-6"
+              className="w-full relative bg-white/80 backdrop-blur-md rounded-3xl mt-6 overflow-hidden"
             >
               <iframe
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Hotel%20Ganga%20Monastery,%20Ganga%20Ghat,%20Varanasi,%20Uttar%20Pradesh,%20India.+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                title="Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar Pradesh, India."
+                src={
+                  contactUsData?.contactInfo?.address?.iframe ||
+                  `https://maps.google.com/maps?width=100%25&height=600&hl=en&q=${encodeURIComponent(
+                    contactUsData?.contactInfo?.address?.fullAddress ||
+                      "Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar Pradesh, India"
+                  )}&t=&z=14&ie=UTF8&iwloc=B&output=embed`
+                }
+                title={
+                  contactUsData?.contactInfo?.address?.fullAddress ||
+                  "Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar Pradesh, India"
+                }
+                // src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Hotel%20Ganga%20Monastery,%20Ganga%20Ghat,%20Varanasi,%20Uttar%20Pradesh,%20India.+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
                 className="w-full h-60 rounded-2xl"
                 loading="lazy"
                 style={{ border: 0 }}

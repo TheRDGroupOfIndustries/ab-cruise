@@ -1,8 +1,10 @@
-// import localFont from "next/font/local";
-import Navbar from "@/components/layout/Navbar";
-import "./globals.css";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { navbarLinksQuery } from "@/sanity/lib/queries";
 import { El_Messiri, DM_Sans, Poppins } from "next/font/google";
+import Navbar from "@/components/layout/Navbar";
 import Head from "next/head";
+import "./globals.css";
+import Footer from "@/components/layout/Footer";
 
 const elMessiri = El_Messiri({
   weight: ["400", "500", "600", "700"],
@@ -85,15 +87,18 @@ const Meta = () => (
   </Head>
 );
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const navData = await sanityFetch({ query: navbarLinksQuery });
+
   return (
     <html lang="en">
       <Meta />
       <body
         className={`${dmSans.className} ${poppins.className} ${elMessiri.variable} antialiased`}
       >
-        <Navbar />
+        <Navbar navData={navData} />
         {children}
+        <Footer navData={navData} />
       </body>
     </html>
   );

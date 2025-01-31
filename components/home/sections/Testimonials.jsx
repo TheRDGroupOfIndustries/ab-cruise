@@ -58,10 +58,14 @@ const Testimonials = ({ testimonialsData }) => {
       <motion.h2
         className="font-elMessiri text-5xl 2xl:text-7xl font-bold text-[#002663]"
         variants={fadeIn("up", 0.2)}
-      >
-        {testimonialsData?.title}
-        {/* What our <span className="text-blue-600">customers</span> says */}
-      </motion.h2>
+        dangerouslySetInnerHTML={{
+          __html:
+            testimonialsData?.title?.replace(
+              /customers/g,
+              '<span style="color: #2563eb">customers</span>'
+            ) || "",
+        }}
+      />
 
       <motion.div
         className="relative mt-8 overflow-hidden"

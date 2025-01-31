@@ -19,6 +19,7 @@ export const structure = (S) =>
               S.documentTypeListItem("bookingInfo").title(
                 "Booking Info Section"
               ),
+              S.documentTypeListItem("contactUs").title("Contact Us Section"),
               // S.documentTypeListItem("contactUsInfo").title(
               //   "Contact Us Info Section"
               // ),
@@ -50,7 +51,7 @@ export const structure = (S) =>
             "gallery",
             "testimonial",
             "bookingInfo",
-            // "contactUsInfo",
+            "contactUs",
 
             "author",
             "post",

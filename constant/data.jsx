@@ -35,13 +35,13 @@ export const aboutUsData = {
 };
 
 export const links = [
-  { href: "/", label: "home" },
-  { href: "/#about-us", label: "about us" },
-  { href: "/#gallery", label: "gallery" },
-  { href: "/", label: "AB" },
-  { href: "/#booking-info", label: "bookings" },
-  { href: "/#contact-us", label: "contact us" },
-  { href: "/#blogs", label: "Blogs" },
+  { label: "home", href: "/", slug: "home" },
+  { label: "about us", href: "/#about-us", slug: "about-us" },
+  { label: "gallery", href: "/#gallery", slug: "gallery" },
+  { label: "AB", href: "/", slug: "ab" },
+  { label: "bookings", href: "/#booking-info", slug: "bookings" },
+  { label: "contact us", href: "/#contact-us", slug: "contact-us" },
+  { label: "Blogs", href: "/#blogs", slug: "blogs" },
 ];
 
 export const bookingOptions = [
