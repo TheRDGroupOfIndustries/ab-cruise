@@ -97,8 +97,6 @@ export default async function RootLayout({ children }) {
   const footerData = await sanityFetch({ query: footerQuery });
   const contactData = await sanityFetch({ query: contactUsQuery });
 
-  console.log("footer", footerData, contactData);
-
   return (
     <html lang="en">
       <Meta />
