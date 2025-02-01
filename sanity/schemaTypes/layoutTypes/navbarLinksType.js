@@ -37,7 +37,6 @@ export const navbarLinksType = defineType({
               title: "Link URL",
               type: "string",
               validation: (Rule) => Rule.required(),
-              initialValue: "/",
             },
             {
               name: "slug",

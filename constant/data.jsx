@@ -41,7 +41,22 @@ export const links = [
   { label: "AB", href: "/", slug: "ab" },
   { label: "bookings", href: "/#booking-info", slug: "bookings" },
   { label: "contact us", href: "/#contact-us", slug: "contact-us" },
-  { label: "Blogs", href: "/#blogs", slug: "blogs" },
+  { label: "blogs", href: "/#blogs", slug: "blogs" },
+];
+
+export const socialLinks = [
+  { label: "Twitter", href: "https://twitter.com", icon: "FaTwitter" },
+  { label: "Facebook", href: "https://facebook.com", icon: "FaFacebook" },
+  {
+    label: "Instagram",
+    href: "https://instagram.com",
+    icon: "FaInstagram",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/",
+    icon: "FaLinkedin",
+  },
 ];
 
 export const bookingOptions = [

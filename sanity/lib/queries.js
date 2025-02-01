@@ -61,6 +61,18 @@ export const categoriesQuery = groq`*[_type == "category"] {
   "slug": slug.current
 }`;
 
+export const footerQuery = groq`*[_type == "footer"][0] {
+  heading,
+  description,
+  socialLinks[] {
+    label,
+    href,
+    icon
+  },
+  disclaimer,
+  abRights
+}`;
+
 export const navbarLinksQuery = groq`*[_type == "navbarLinks"][0] {
   heading,
   links[] {

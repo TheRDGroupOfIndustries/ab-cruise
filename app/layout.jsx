@@ -1,7 +1,11 @@
 import Head from "next/head";
 import { El_Messiri, DM_Sans, Poppins } from "next/font/google";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { navbarLinksQuery } from "@/sanity/lib/queries";
+import {
+  contactUsQuery,
+  footerQuery,
+  navbarLinksQuery,
+} from "@/sanity/lib/queries";
 import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -90,6 +94,10 @@ const Meta = () => (
 
 export default async function RootLayout({ children }) {
   const navData = await sanityFetch({ query: navbarLinksQuery });
+  const footerData = await sanityFetch({ query: footerQuery });
+  const contactData = await sanityFetch({ query: contactUsQuery });
+
+  console.log("footer", footerData, contactData);
 
   return (
     <html lang="en">
@@ -99,7 +107,11 @@ export default async function RootLayout({ children }) {
       >
         <Navbar navData={navData} />
         {children}
-        <Footer navData={navData} />
+        <Footer
+          footerData={footerData}
+          navData={navData}
+          contactData={contactData}
+        />
         <Toaster richColors closeButton />
       </body>
     </html>
