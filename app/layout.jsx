@@ -1,10 +1,11 @@
+import Head from "next/head";
+import { El_Messiri, DM_Sans, Poppins } from "next/font/google";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { navbarLinksQuery } from "@/sanity/lib/queries";
-import { El_Messiri, DM_Sans, Poppins } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/layout/Navbar";
-import Head from "next/head";
-import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import "./globals.css";
 
 const elMessiri = El_Messiri({
   weight: ["400", "500", "600", "700"],
@@ -99,6 +100,7 @@ export default async function RootLayout({ children }) {
         <Navbar navData={navData} />
         {children}
         <Footer navData={navData} />
+        <Toaster richColors closeButton />
       </body>
     </html>
   );

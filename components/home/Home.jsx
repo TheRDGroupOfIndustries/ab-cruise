@@ -50,7 +50,7 @@ export default async function Home() {
 
   if (!heroData) return <Loader />;
 
-  console.log("bd", contactUsData);
+  // console.log("bd", contactUsData);
 
   return (
     <>

@@ -24,7 +24,7 @@ const Footer = ({ navData }) => {
       variants={staggerContainer(0.2, 0.1)}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: false, amount: 0.05 }}
     >
       <motion.div
         className="bg-[#00205B] rounded-3xl p-6"
