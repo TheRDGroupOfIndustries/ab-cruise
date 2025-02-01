@@ -61,6 +61,15 @@ export const categoriesQuery = groq`*[_type == "category"] {
   "slug": slug.current
 }`;
 
+export const navbarLinksQuery = groq`*[_type == "navbarLinks"][0] {
+  heading,
+  links[] {
+    label,
+    href,
+    slug
+  }
+}`;
+
 export const footerQuery = groq`*[_type == "footer"][0] {
   heading,
   description,
@@ -70,15 +79,27 @@ export const footerQuery = groq`*[_type == "footer"][0] {
     icon
   },
   disclaimer,
-  abRights
+  abRights,
+  terms,
+  privacy
 }`;
 
-export const navbarLinksQuery = groq`*[_type == "navbarLinks"][0] {
-  heading,
-  links[] {
-    label,
-    href,
-    slug
+export const singleDynamicPageQuery = groq`*[_type == "dynamicPage" && slug.current == $slug][0] {
+  _id,
+  title,
+  "slug": slug.current,
+  body[] {
+    ...,
+    _type == "image" => {
+      ...,
+      "url": asset->url,
+      "metadata": asset->metadata
+    },
+    _type == "link" => {
+      ...,
+      href,
+      text
+    }
   }
 }`;
 

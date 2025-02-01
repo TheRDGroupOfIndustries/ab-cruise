@@ -8,6 +8,8 @@ import { galleryType } from "./homeTypes/galleryType";
 import { bookingInfoType } from "./homeTypes/bookingInfoType";
 import { testimonialType } from "./homeTypes/testimonialType";
 
+import { dynamicPageType } from "./dynamicPageType";
+
 import { categoryType } from "./blogTypes/categoryType";
 import { postType } from "./blogTypes/postType";
 import { authorType } from "./blogTypes/authorType";
@@ -25,6 +27,8 @@ export const schema = {
     testimonialType,
     bookingInfoType,
     contactUsType,
+
+    dynamicPageType,
 
     blockContentType,
     categoryType,

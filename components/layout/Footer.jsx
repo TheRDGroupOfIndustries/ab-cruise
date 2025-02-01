@@ -24,7 +24,6 @@ const iconMap = {
 
 const Footer = ({ footerData, navData, contactUsData }) => {
   const pathname = usePathname();
-
   if (pathname.includes("/studio")) return null;
   return (
     <motion.footer
@@ -189,6 +188,14 @@ const Footer = ({ footerData, navData, contactUsData }) => {
             <br />
             <Link href="/" className="w-fit hover-link mt-4">
               &copy; {new Date().getFullYear()} {footerData?.abRights}
+            </Link>
+            {" | "}
+            <Link href={footerData?.terms?.link} className="w-fit hover-link">
+              {footerData?.terms?.label}
+            </Link>
+            {" | "}
+            <Link href={footerData?.privacy?.link} className="w-fit hover-link">
+              {footerData?.privacy?.label}
             </Link>
           </motion.div>
         </div>

@@ -74,6 +74,50 @@ export const footerType = defineType({
       validation: (Rule) => Rule.required(),
       initialValue: "All rights are reserved by AB Cruise",
     }),
+
+    defineField({
+      name: "terms",
+      title: "Terms of Service",
+      type: "object",
+      fields: [
+        {
+          name: "label",
+          title: "Terms of Service label",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+          initialValue: "Terms of Service",
+        },
+        {
+          name: "link",
+          title: "Terms of Service Link",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+          initialValue: "/terms-of-service",
+        },
+      ],
+    }),
+
+    defineField({
+      name: "privacy",
+      title: "Privacy Policy",
+      type: "object",
+      fields: [
+        {
+          name: "label",
+          title: "Privacy Policy label",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+          initialValue: "Privacy Policy",
+        },
+        {
+          name: "link",
+          title: "Privacy Policy Link",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+          initialValue: "/privacy-policy",
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
