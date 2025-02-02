@@ -73,6 +73,16 @@ export const footerType = defineType({
           href: "/privacy-policy",
           slug: "privacy-policy",
         },
+        {
+          label: "Refund Policy",
+          href: "/refund-policy",
+          slug: "refund-policy",
+        },
+        {
+          label: "Cancellation Policy",
+          href: "/cancellation-policy",
+          slug: "cancellation-policy",
+        },
       ],
       of: [
         {
