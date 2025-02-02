@@ -59,6 +59,50 @@ export const footerType = defineType({
     }),
 
     defineField({
+      name: "legalAndSupport",
+      title: "Legal & Support List",
+      type: "array",
+      initialValue: [
+        {
+          label: "Terms of Service",
+          href: "/terms-of-service",
+          slug: "terms-of-service",
+        },
+        {
+          label: "Privacy Policy",
+          href: "/privacy-policy",
+          slug: "privacy-policy",
+        },
+      ],
+      of: [
+        {
+          type: "object",
+          name: "link",
+          title: "Add Link",
+          fields: [
+            {
+              name: "label",
+              title: "Link Label",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "href",
+              title: "Link URL",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "slug",
+              title: "Link Slug",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    }),
+
+    defineField({
       name: "disclaimer",
       title: "Disclaimer",
       type: "string",
@@ -73,50 +117,6 @@ export const footerType = defineType({
       type: "string",
       validation: (Rule) => Rule.required(),
       initialValue: "All rights are reserved by AB Cruise",
-    }),
-
-    defineField({
-      name: "terms",
-      title: "Terms of Service",
-      type: "object",
-      fields: [
-        {
-          name: "label",
-          title: "Terms of Service label",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-          initialValue: "Terms of Service",
-        },
-        {
-          name: "link",
-          title: "Terms of Service Link",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-          initialValue: "/terms-of-service",
-        },
-      ],
-    }),
-
-    defineField({
-      name: "privacy",
-      title: "Privacy Policy",
-      type: "object",
-      fields: [
-        {
-          name: "label",
-          title: "Privacy Policy label",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-          initialValue: "Privacy Policy",
-        },
-        {
-          name: "link",
-          title: "Privacy Policy Link",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-          initialValue: "/privacy-policy",
-        },
-      ],
     }),
   ],
   preview: {

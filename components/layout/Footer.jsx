@@ -24,7 +24,7 @@ const iconMap = {
 
 const Footer = ({ footerData, navData, contactUsData }) => {
   const pathname = usePathname();
-  if (pathname.includes("/studio")) return null;
+  // if (pathname.includes("/studio")) return null;
   return (
     <motion.footer
       className="select-text w-full text-white p-4 overflow-hidden"
@@ -38,7 +38,7 @@ const Footer = ({ footerData, navData, contactUsData }) => {
         variants={fadeIn("up", 0.2)}
       >
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* logo and description section */}
             <motion.div variants={fadeIn("left", 0.3)}>
               <h2 className="text-2xl md:text-4xl 2xl:text-5xl font-bold mb-4">
@@ -97,7 +97,7 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                           target="_blank"
                           className="w-fit flex items-center group"
                         >
-                          <span className="capitalize font-bold group-hover-link-underline">
+                          <span className="capitalize group-hover-link-underline">
                             {link.label}
                           </span>
                           <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
@@ -169,6 +169,35 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                 </motion.div>
               </div>
             </motion.div>
+
+            {/* legal & support */}
+            <motion.div
+              variants={fadeIn("right", 0.4)}
+              className="w-full h-fit md:flex-center flex-col"
+            >
+              <h2 className="text-xl font-semibold mb-4">Legal & Support</h2>
+              <div className="grid space-y-2">
+                {footerData?.legalAndSupport?.map((link, index) => (
+                  <motion.div
+                    variants={fadeIn("up", 0.5)}
+                    key={index}
+                    className="w-fit overflow-hidden"
+                  >
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      className="w-fit flex-center gap-1 -translate-x-6 hover:translate-x-0 group ease-in-out duration-200"
+                    >
+                      <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
+
+                      <span className="group-hover-link-underline">
+                        {link.label}
+                      </span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
 
           <motion.div
@@ -188,14 +217,6 @@ const Footer = ({ footerData, navData, contactUsData }) => {
             <br />
             <Link href="/" className="w-fit hover-link mt-4">
               &copy; {new Date().getFullYear()} {footerData?.abRights}
-            </Link>
-            {" | "}
-            <Link href={footerData?.terms?.link} className="w-fit hover-link">
-              {footerData?.terms?.label}
-            </Link>
-            {" | "}
-            <Link href={footerData?.privacy?.link} className="w-fit hover-link">
-              {footerData?.privacy?.label}
             </Link>
           </motion.div>
         </div>

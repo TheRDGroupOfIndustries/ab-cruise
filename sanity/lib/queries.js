@@ -78,10 +78,14 @@ export const footerQuery = groq`*[_type == "footer"][0] {
     href,
     icon
   },
+  legalAndSupport[] {
+    label,
+    href,
+    icon
+  },
   disclaimer,
   abRights,
-  terms,
-  privacy
+  
 }`;
 
 export const singleDynamicPageQuery = groq`*[_type == "dynamicPage" && slug.current == $slug][0] {
