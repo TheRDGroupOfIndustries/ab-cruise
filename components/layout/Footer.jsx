@@ -91,8 +91,19 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                       <motion.li
                         key={index}
                         variants={fadeIn("up", 0.5 + index * 0.1)}
+                        className="w-fit overflow-hidden"
                       >
                         <Link
+                          href={link.href}
+                          className="w-fit flex-center gap-1 -translate-x-4 hover:translate-x-0 group ease-in-out duration-200"
+                        >
+                          <ArrowRight className="w-4 h-4 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
+
+                          <span className="capitalize group-hover-link-underline">
+                            {link.label}
+                          </span>
+                        </Link>
+                        {/* <Link
                           href={link.href}
                           target="_blank"
                           className="w-fit flex items-center group"
@@ -101,7 +112,7 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                             {link.label}
                           </span>
                           <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-300" />
-                        </Link>
+                        </Link> */}
                       </motion.li>
                     )
                 )}
@@ -112,7 +123,10 @@ const Footer = ({ footerData, navData, contactUsData }) => {
             <motion.div variants={fadeIn("right", 0.4)}>
               <h2 className="text-xl font-semibold mb-4">Contact Info.</h2>
               <div className="grid space-y-2">
-                <motion.div variants={fadeIn("up", 0.5)}>
+                <motion.div
+                  variants={fadeIn("up", 0.5)}
+                  className="w-fit pb-1 overflow-hidden"
+                >
                   <Link
                     href={
                       ((
@@ -125,7 +139,7 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                       "tel:+918353936768"
                     }
                     target="_blank"
-                    className="flex items-center gap-2 group"
+                    className="flex items-center gap-3 group"
                   >
                     <FaPhone className="w-4 h-4" />
                     <span className="group-hover-link">
@@ -134,11 +148,14 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                     </span>
                   </Link>
                 </motion.div>
-                <motion.div variants={fadeIn("up", 0.6)}>
+                <motion.div
+                  variants={fadeIn("up", 0.6)}
+                  className="w-fit pb-1 overflow-hidden"
+                >
                   <Link
                     href={`mailto:${contactUsData?.contactInfo?.email?.link || "support@abcruisers.com"}`}
                     target="_blank"
-                    className="flex items-center gap-2 group"
+                    className="flex items-center gap-3 group"
                   >
                     <FaEnvelope className="w-4 h-4" />
                     <span className="group-hover-link">
@@ -147,7 +164,10 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                     </span>
                   </Link>
                 </motion.div>
-                <motion.div variants={fadeIn("up", 0.7)}>
+                <motion.div
+                  variants={fadeIn("up", 0.7)}
+                  className="w-fit pb-1 overflow-hidden"
+                >
                   <Link
                     href={
                       contactUsData?.contactInfo?.address?.iframe ||
@@ -158,10 +178,10 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                       "https://maps.app.goo.gl/h4aJfGBaoJuBqqB66"
                     }
                     target="_blank"
-                    className="flex items-center gap-2 group"
+                    className="w-fit flex items-center gap-3 group"
                   >
-                    <FaMapMarkerAlt className="w-4 h-4" />
-                    <span className="group-hover-link">
+                    <FaMapMarkerAlt className="w-6 h-6" />
+                    <span className="group-hover-link text-balance">
                       {contactUsData?.contactInfo?.address?.fullAddress ||
                         "Hotel Ganga Monastery, Ganga Ghat, Varanasi, Uttar Pradesh, India."}
                     </span>
@@ -186,9 +206,9 @@ const Footer = ({ footerData, navData, contactUsData }) => {
                     <Link
                       href={link.href}
                       target="_blank"
-                      className="w-fit flex-center gap-1 -translate-x-6 hover:translate-x-0 group ease-in-out duration-200"
+                      className="w-fit flex-center gap-1 -translate-x-4 hover:translate-x-0 group ease-in-out duration-200"
                     >
-                      <ArrowRight className="w-4 h-4 ml-2 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
+                      <ArrowRight className="w-4 h-4 group-active:translate-x-1 group-active:-translate-y-1 group-hover:scale-110 group-hover:-rotate-45 transition-all ease-in-out duration-500" />
 
                       <span className="group-hover-link-underline">
                         {link.label}
