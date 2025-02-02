@@ -24,7 +24,8 @@ const iconMap = {
 
 const Footer = ({ footerData, navData, contactUsData }) => {
   const pathname = usePathname();
-  // if (pathname.includes("/studio")) return null;
+  if (pathname.includes("/studio")) return null;
+
   return (
     <motion.footer
       className="select-text w-full text-white p-4 overflow-hidden"

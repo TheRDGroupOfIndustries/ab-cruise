@@ -108,7 +108,7 @@ export default async function RootLayout({ children }) {
         <Footer
           footerData={footerData}
           navData={navData}
-          contactData={contactData}
+          contactUsData={contactData}
         />
         <Toaster richColors closeButton />
       </body>
